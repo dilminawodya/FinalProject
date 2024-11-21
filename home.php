@@ -25,9 +25,8 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
     
     <title>Home</title>
 </head>
@@ -39,13 +38,18 @@
             <div class="logo">
                 <img src="logoo.png" alt="Logo" width="200" height="200">
             </div>
+            <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+           
+
             <ul>
                 <li><a href="home.php">
                     <span><i class="fa-solid fa-house"></i></span>
                     <span>Home</span>
                 </a></li>
 
-                <li><a href="#">
+                <li><a href="search.php">
                     <span><i class="fa-solid fa-magnifying-glass"></i></span>
                     <span>Search & Discovery</span>
                 </a></li>
