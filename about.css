@@ -1,0 +1,136 @@
+* {   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Setting the body background color to blue */
+body {
+    background-color: blue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 300px;
+    background: #302936;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding: 10px;
+}
+
+/* Sidebar navigation styling */
+.sidebar-nav {
+    background: rgb(42, 41, 60);
+    border-radius: 10px;
+    padding: 20px 10px;
+    margin-bottom: 10px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+}
+
+.sidebar-nav ul li {
+    padding: 10px 20px;
+}
+
+/* Link styles */
+.sidebar-nav ul li a {
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-nav ul li a:hover {
+    color: beige;
+}
+
+.sidebar-nav ul li a i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+/* Privacy section styles */
+.privacy ul li a {
+    text-decoration: none;
+    color: rgb(242, 236, 236);
+    font-size: 12px;
+    font-weight: 200;
+    margin: 0 6px;
+}
+
+.privacy ul {
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
+
+/* Logo styling */
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.main-section{
+    margin-left: 300px;
+    background: #261e3c;
+    height: 100vh;
+}
+.main-section .top-nav{
+    padding: 20px 30px;
+    background: #1c1224;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.main-section .top-nav  button {
+  
+    border: 0;
+    outline: 0;
+}
+.main-section .top-nav .prev-btn button i{
+   color: rgb(131, 114, 92);
+   font-size: 22px;
+   margin-right: 10px;
+   
+}
+.top-nav .login-btn .login{
+    color: rgb(47, 52, 50);
+    font-size: 16px;
+    font-weight: 600;
+    margin-right: 25px;
+}
+.top-nav .login-btn .login:hover{
+    color: azure;
+     
+}
+.top-nav .login-btn .login{
+    color: rgb(47, 52, 50);
+    font-size: 16px;
+    font-weight: 600;
+    background: #e0dee6;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+.top-nav .login-btn .login{
+    background: #c3acd9;
+}
+.top-nav .login-btn .register{
+    color: rgb(47, 52, 50);
+    font-size: 16px;
+    font-weight: 600;
+    background: #e0dee6;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+.top-nav .login-btn .register{
+    background: #c3acd9;}
+    
+.top-nav .login-btn .register:hover{
+        color: azure;
+         
+    }
