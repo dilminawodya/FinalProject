@@ -15,6 +15,63 @@
     height: 100vh;
     overflow-y: auto;
    }
+   footer .bx {
+    color: #ffffff; /* Ensure white color for visibility */
+    font-size: 1.5rem;
+    margin-right: 1rem; /* Add spacing between icons */
+    transition: color 0.3s ease;
+}
+
+footer .bx:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+/* Navigation Container Styling */
+.nav-container {
+    background-color: #1c1224; /* Matching the top-nav background */
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: sticky; /* Keeps the nav menu fixed at the top during scrolling */
+    top: 0;
+    z-index: 999; /* Ensures it stays above other elements */
+}
+
+/* Navigation Menu Styling */
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    overflow-x: auto; /* Enables horizontal scrolling for smaller screens */
+}
+
+.nav-menu li {
+    margin-right: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #ffffff; /* White text for visibility on dark background */
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+    background-color: #3a3053; /* A lighter shade for hover effect */
+    color: #ffffff;
+}
+
+/* Optional: Active Link Styling */
+.nav-menu li a.active {
+    background-color: #584466; /* Highlight the active page */
+    color: #ffffff;
+}
+
+
+
+
 
 
     </style>
@@ -36,7 +93,7 @@
     <div class="sidebar">
         <div class="sidebar-nav">
             <div class="logo">
-                <img src="logoo.png" alt="Logo" width="200" height="200">
+                <img src="logoo.png" alt="Logo" width="180" height="175">
             </div>
             <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -105,8 +162,28 @@
                 <button class="register"><a href="register.php">Register</a></button>
 
             </div>
+
+            </div>
+
             
-        </div><br><br>
+        <div class="nav-container">
+        <ul class="nav-menu">
+            <li><a href="#">All</a></li>
+            <li><a href="#">Music</a></li>
+            <li><a href="#">Songs</a></li>
+            <li><a href="#">Films</a></li>
+            <li><a href="#">Tv series</a></li>
+            <li><a href="#">Country</a></li>
+            <li><a href="#">Mixes</a></li>
+            <li><a href="#">Playlists</a></li>
+            <li><a href="#">Top hits</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">New release</a></li>
+            
+        </ul>
+    </div><br><br>
+            
+     
 
         <div class="container">
         <h4 style="color:white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:22px">What is the Funix,</h4>
@@ -367,11 +444,61 @@
                 </div>
             </div>
         </div>
+    </div><br>
+   
+    <footer class="text-light pt-5" style="background-color: #1c1224;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <img src="logoo.png" alt="Logo" width="150" height="150">
+                <h5>Funix</h5>
+                <p>At Funix, music and video inspire, connect, and entertain. Enjoy hits, classics, series, and indie exclusives all at your fingertips.</p>
+            </div>
+            <div class="col-md-3">
+                <h5>Using link</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">Home</a></li><br>
+                    <li><a href="#" class="text-light">Playlists</a></li><br>
+                    <li><a href="#" class="text-light">User profile</a></li><br>
+                    <li><a href="#" class="text-light">About us</a></li><br>
+                    <li><a href="#" class="text-light">Package</a></li><br>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Support</h5>
+                <ul class="list-unstyled">
+                    <li><a href="#" class="text-light">Settings</a></li><br>
+                    <li><a href="#" class="text-light">Edit profile</a></li><br>
+                    <li><a href="#" class="text-light">Privacy Policy</a></li><br>
+                    <li><a href="#" class="text-light">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h5>Follow us</h5><br>
+                <div>
+                    <a href="#" class="text-light me-3"><i class='bx bxl-twitter'></i></a>
+                    <a href="#" class="text-light me-3"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="text-light"><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4 text-light">
+        <div class="d-flex justify-content-between align-items-center">
+            <p class="mb-0">© 2024 MusicStream. All rights reserved.</p>
+        </div>
     </div>
-</div> <br>
+</footer>
+
+<!-- Include Boxicons Library -->
+<link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
 
-    </div>
+
+
+
+
+
+    
     <!-- JavaScript for Ad Behavior -->
     <script>
         // Function to close the advertisement box
@@ -386,6 +513,9 @@
             adBox.style.display = 'flex';
         }, 5000); // Show ad after 5 seconds
     </script>
-    
+
+
+   
+    </div> 
 </body>
 </html>  

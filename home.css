@@ -288,3 +288,41 @@ body {
   .btn-warning:hover {
     background-color: #e0b700;
   }
+  
+
+  footer h5 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+footer ul {
+    padding-left: 0;
+}
+
+footer ul li a {
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #007bff; /* Bootstrap primary color */
+}
+
+footer form input {
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+}
+
+footer form button {
+    border-radius: 0.25rem;
+}
+
+footer .bi {
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+footer .bi:hover {
+    color: #007bff;
+}
