@@ -1,3 +1,12 @@
+<?php
+session_start();
+include("connect.php");
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,10 +93,18 @@ footer .bx:hover {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+
+
     
     <title>Home</title>
 </head>
 <body >
+
+
+
     <!-- Sidebar Section -->
     
     <div class="sidebar">
@@ -96,8 +113,8 @@ footer .bx:hover {
                 <img src="logoo.png" alt="Logo" width="180" height="175">
             </div>
             <button class="navbar-toggler text-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+         <span class="navbar-toggler-icon"></span>
+        </button>
            
 
             <ul>
@@ -158,8 +175,18 @@ footer .bx:hover {
             </div>
 
             <div class="login-btn">
-                <button class="login"><a href="login.php">login</a></button>
-                <button class="register"><a href="register.php">Register</a></button>
+                <button class="login"><a href="login.php">login</a>
+               
+                <?php 
+       if(isset($_SESSION['email'])){
+        $email=$_SESSION['email'];
+        $query=mysqli_query($conn, "SELECT users.* FROM `users` WHERE users.email='$email'");
+        while($row=mysqli_fetch_array($query)){
+            echo $row['firstName'].' '.$row['lastName'];
+        }
+       }
+       ?></button>
+          <button class="register"> <a href="logout.php">Logout</a>
 
             </div>
 

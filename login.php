@@ -3,103 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music & Video Streaming Platform</title>
-    <link rel="stylesheet" href="login.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Register & Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header with Navbar -->
-    <header class="header">
-        <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#">Library</a>
-            <a href="#">Contact</a>
-        </nav>
-        <form action="#" class="search-bar">
-            <input type="text" placeholder="Search">
-            <button type="submit"><i class='bx bx-search'></i></button>
-        </form>
-    </header>
-
-    <!-- Background Image -->
-    <div class="background"></div>
-
-    <!-- Main Container -->
-    <div class="container">
-        <!-- Left Side: Logo and Welcome Text -->
-        <div class="content">
-            <img src="logoo.png" alt="Logo" width="350" height="350">
-            <div class="text-sci">
-                <h2>Welcome!<br><span>To Our Streaming Platform</span></h2>
-                <p>Stream your favorite music and videos anytime, anywhere.</p>
-                <div class="social-icons">
-                    <a href="#"><i class='bx bxl-linkedin'></i></a>
-                    <a href="#"><i class='bx bxl-facebook'></i></a>
-                    <a href="#"><i class='bx bxl-instagram'></i></a>
-                    <a href="#"><i class='bx bxl-twitter'></i></a>
-                </div>
-            </div>
+<div class="main-container">
+        
+        <div class="left-side">
+            <img src="logoo.png" alt="" width="300px" height="300px">
+            <h1>Welcome to  FUNIX</h1>
+            <p style=font: size 20px;>
+            Funix is a dynamic and innovative music and video streaming platform, designed to offer users an immersive and personalized entertainment experience. We are a team of passionate music lovers and movie enthusiasts who are dedicated to curating the best content from around the world. Our mission is to create a platform where users can discover, enjoy, and share their favorite tunes and videos with ease. 
+            </p>
         </div>
-
-        <!-- Right Side: Login and Register Forms -->
-        <div class="logreg-box">
-            <!-- Login Form -->
-            <div class="form-box login">
-                <form id="loginForm">
-                    <h2>Login</h2>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxl-gmail'></i></span>
-                        <input type="email" required>
-                        <label>Email</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
-                        <input type="password" required>
-                        <label>Password</label>
-                    </div>
-                    <div class="remember-forgot">
-                        <label><input type="checkbox"> Remember me</label>
-                        <a href="#">Forgot password?</a>
-                    </div>
-                    <button type="submit" class="btn">Login</button>
-                    <div class="login-register">
-                        <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
-                    </div>
-                </form>
-            </div>
-
-            <!-- Register Form -->
-            <div class="form-box register">
-                <form id="registerForm">
-                    <h2>Register</h2>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-user-circle'></i></span>
-                        <input type="text" required>
-                        <label>Username</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxl-gmail'></i></span>
-                        <input type="email" required>
-                        <label>Email</label>
-                    </div>
-                    <div class="input-box">
-                        <span class="icon"><i class='bx bxs-lock-alt'></i></span>
-                        <input type="password" required>
-                        <label>Password</label>
-                    </div>
-                    <div class="remember-forgot">
-                        <label><input type="checkbox"> I agree to the terms & conditions</label>
-                    </div>
-                    <button type="submit" class="btn">Register</button>
-                    <div class="login-register">
-                        <p>Already have an account? <a href="login.php" class="login-link">Login</a></p>
-                    </div>
-                </form>
-            </div>
+  
+     <div class="right-side">
+    <div class="container" id="signup" style="display:none;">
+      <h1 class="form-title">Register</h1>
+      <form method="post" action="register.php">
+        <div class="input-group">
+           <i class="fas fa-user"></i>
+           <input type="text" name="fName" id="fName" placeholder="First Name" required>
+           <label for="fname">First Name</label>
         </div>
+        <div class="input-group">
+            <i class="fas fa-user"></i>
+            <input type="text" name="lName" id="lName" placeholder="Last Name" required>
+            <label for="lName">Last Name</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-envelope"></i>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <label for="email">Email</label>
+        </div>
+        <div class="input-group">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <label for="password">Password</label>
+        </div>
+       <input type="submit" class="btn" value="Sign Up" name="signUp">
+      </form>
+      <p class="or">
+        ----------or--------
+      </p>
+      <div class="icons">
+        <i class="fab fa-google"></i>
+        <i class="fab fa-facebook"></i>
+      </div>
+      <div class="links">
+        <p>Already Have Account ?</p>
+        <button id="signInButton">Sign In</button>
+       
+      </div>
     </div>
 
-    <script src="login.js"></script>
+    <div class="container" id="signIn">
+        <h1 class="form-title">Sign In</h1>
+        <form method="post" action="register.php">
+          <div class="input-group">
+              <i class="fas fa-envelope"></i>
+              <input type="email" name="email" id="email" placeholder="Email" required>
+              <label for="email">Email</label>
+          </div>
+          <div class="input-group">
+              <i class="fas fa-lock"></i>
+              <input type="password" name="password" id="password" placeholder="Password" required>
+              <label for="password">Password</label>
+          </div>
+          <p class="recover">
+            <a href="#">Recover Password</a>
+          </p>
+         <input type="submit" class="btn" value="Sign In" name="signIn">
+        </form>
+        <p class="or">
+          ----------or--------
+        </p>
+        <div class="icons">
+          <i class="fab fa-google"></i>
+          <i class="fab fa-facebook"></i>
+        </div>
+        <div class="links">
+          <p>Don't have account yet?</p>
+          <button id="signUpButton">Sign Up</button>
+        </div>
+      </div></div></div>
+      <script src="script.js"></script>
 </body>
 </html>

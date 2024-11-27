@@ -11,7 +11,7 @@ body {
 }
 
 /* Sidebar styling */
-.sidebar {
+/*.sidebar {
     width: 300px;
     background: #302936;
     position: fixed;
@@ -19,10 +19,10 @@ body {
     left: 0;
     bottom: 0;
     padding: 10px;
-}
+}*/
 
 /* Sidebar navigation styling */
-.sidebar-nav {
+/*.sidebar-nav {
     background: rgb(42, 41, 60);
     border-radius: 10px;
     padding: 20px 10px;
@@ -38,7 +38,7 @@ body {
 }
 
 /* Link styles */
-.sidebar-nav ul li a {
+/*.sidebar-nav ul li a {
     text-decoration: none;
     color: antiquewhite;
     font-size: 16px;
@@ -54,7 +54,94 @@ body {
 .sidebar-nav ul li a i {
     font-size: 20px;
     margin-right: 10px;
+}*/
+
+/* Base styles for the sidebar */
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
 }
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    text-align: left;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+}
+
+.sidebar ul li a:hover {
+    background-color: #444;
+}
+
+/* Sidebar logo section */
+.sidebar .logo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Privacy section styling */
+.sidebar .privacy ul {
+    list-style: none;
+    padding: 10px;
+}
+
+.sidebar .privacy ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.sidebar .privacy ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+    .navbar-toggler {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 1100;
+    }
+
+    .navbar-toggler-icon {
+        width: 25px;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+}
+
 
 /* Privacy section styles */
 .privacy ul li a {
