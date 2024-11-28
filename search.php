@@ -1,3 +1,11 @@
+<?php
+session_start();
+include("connect.php");
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -106,7 +114,7 @@ footer .bx:hover {
                     <span>Search & Discovery</span>
                 </a></li>
 
-                <li><a href="#">
+                <li><a href="library.php">
                     <span><i class="fa-solid fa-book-open"></i></span>
                     <span>Library</span>
                 </a></li>
@@ -153,7 +161,21 @@ footer .bx:hover {
             </div>
 
             <div class="login-btn">
-                <button class="login"><a href="login.php">login</a></button>
+                <button class="login"><a href="login.php">login</a>
+                
+                <?php 
+       if(isset($_SESSION['email'])){
+        $email=$_SESSION['email'];
+        $query=mysqli_query($conn, "SELECT users.* FROM `users` WHERE users.email='$email'");
+        while($row=mysqli_fetch_array($query)){
+            echo $row['firstName'].' '.$row['lastName'];
+        }
+       }
+       ?></button>
+
+
+
+
                 <button class="register"><a href="register.php">Register</a></button>
 
             </div>
@@ -176,6 +198,8 @@ footer .bx:hover {
             
         </ul>
     </div><br><br>
+
+    <h1 style="text-align: center; color:white">Search & Discovery</h1><br>
 
 
        <!-- Search Bar -->

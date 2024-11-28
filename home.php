@@ -128,7 +128,7 @@ footer .bx:hover {
                     <span>Search & Discovery</span>
                 </a></li>
 
-                <li><a href="#">
+                <li><a href="library.php">
                     <span><i class="fa-solid fa-book-open"></i></span>
                     <span>Library</span>
                 </a></li>
