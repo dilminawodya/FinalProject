@@ -2,7 +2,23 @@
 session_start();
 include("connect.php");
 
+$query = "";
+
+// Check if the form has been submitted
+if (isset($_POST['query'])) {
+    // Get the search input from the form
+    $query = $_POST['query'];
+
+    // Sanitize the input to avoid SQL injection
+    $query = mysqli_real_escape_string($conn, $query);
+
+    // Prepare and execute the SQL query to search the database
+    $sql = "SELECT * FROM media WHERE title LIKE '%$query%' OR artist LIKE '%$query%' OR category LIKE '%$query%'";
+    $result = mysqli_query($conn, $sql);
+}
 ?>
+
+
 
 
 
@@ -212,11 +228,40 @@ footer .bx:hover {
       </div>
      <br><br>
 
+     
+<div class="container">
+    <?php if (isset($result) && mysqli_num_rows($result) > 0): ?>
+        <h4 style="color:white; font-size:22px">Search Results</h4>
+        <div class="row">
+            <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                <div class="col-md-4 col-lg-3">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="...">
+                        <div class="play-btn">
+                            <a href="Ananthayen Aa Tharu Kumara Song.mp4"><i class="fa-solid fa-play"></i></a>
+                        </div>
+                        <h4><?php echo htmlspecialchars($row['title']); ?>Ananthayen Aa Tharu Kumara </h4>
+                        <p><?php echo htmlspecialchars($row['artist']); ?></p>
+                    </div>
+                </div>
+            <?php endwhile; ?>
+        </div>
+    <?php elseif (isset($result)): ?>
+        <p style="color:white;">No results found for "<?php echo htmlspecialchars($query); ?>"</p>
+    <?php else: ?>
+        <p style="color:white;">Error executing the query. Please check your database connection and query.</p>
+    <?php endif; ?>
+</div>
+
+
+
      <div class="container">
   <div class="recommended-for-you">
       <h4 style="color:white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:22px">Recommended For You</h4>
   </div>
 </div>
+
+
   
 <div class="container">
     <div class="row">
@@ -240,9 +285,9 @@ footer .bx:hover {
                 <div class="item">
                     <img src="a8.jpg" class="card-img-top" alt="...">
                     <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
+                        <a href="Ananthayen Aa Tharu Kumara Song.mp4"><i class="fa-solid fa-play"></i></a>
                     </div>
-                    <h4>Song Title</h4>
+                    <h4>Ananthayen Aa Tharu Kumara Song</h4>
                     <p>Artist Name</p>
                 </div>
             </div>
@@ -421,6 +466,8 @@ footer .bx:hover {
     </div>
 </div><br>
 
+
+
 <footer class="text-light pt-5" style="background-color: #1c1224;">
     <div class="container">
         <div class="row">
@@ -470,7 +517,10 @@ footer .bx:hover {
 
 
 
-
+<?php
+// Close the database connection
+mysqli_close($conn);
+?>
       
 </body>
 </html>
