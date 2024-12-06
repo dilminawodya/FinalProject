@@ -1,526 +1,110 @@
 <?php
+include 'db_connect.php';
 session_start();
-include("connect.php");
 
-$query = "";
+// Assuming the user ID is stored in session after login
+$user_id = $_SESSION['user_id'];
 
-// Check if the form has been submitted
-if (isset($_POST['query'])) {
-    // Get the search input from the form
-    $query = $_POST['query'];
+// Handle the search
+$search_results = [];
+$message = '';
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
+    $search_query = trim($_POST['search_query']);
 
-    // Sanitize the input to avoid SQL injection
-    $query = mysqli_real_escape_string($conn, $query);
+    if (!empty($search_query)) {
+        $sql = "INSERT INTO search_logs (user_id, search_query) VALUES ('$user_id', '$search_query')";
+        mysqli_query($conn, $sql);
 
-    // Prepare and execute the SQL query to search the database
-    $sql = "SELECT * FROM media WHERE title LIKE '%$query%' OR artist LIKE '%$query%' OR category LIKE '%$query%'";
-    $result = mysqli_query($conn, $sql);
+        // Fetch search results
+        $query = "
+            SELECT * FROM media 
+            WHERE title LIKE '%$search_query%' OR artist LIKE '%$search_query%'
+        ";
+        $search_results = mysqli_query($conn, $query);
+
+        if (mysqli_num_rows($search_results) === 0) {
+            $message = 'No results found for your search.';
+        }
+    } else {
+        $message = 'Please enter a search term.';
+    }
 }
 ?>
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funix | Search</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="search.css">
-    <style>
-        body {
-           background: rgb(21, 21, 44);
-           font-family: Arial, Helvetica, sans-serif;
-     }
-     .main-section {
-    margin-left: 300px;
-    background: #261e3c;
-    height: 100vh;
-    overflow-y: auto;
-   }
-   footer .bx {
-    color: #ffffff; /* Ensure white color for visibility */
-    font-size: 1.5rem;
-    margin-right: 1rem; /* Add spacing between icons */
-    transition: color 0.3s ease;
-}
-
-footer .bx:hover {
-    color: #007bff; /* Change color on hover */
-}
-
-/* Navigation Container Styling */
-.nav-container {
-    background-color: #1c1224; /* Matching the top-nav background */
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    position: sticky; /* Keeps the nav menu fixed at the top during scrolling */
-    top: 0;
-    z-index: 999; /* Ensures it stays above other elements */
-}
-
-/* Navigation Menu Styling */
-.nav-menu {
-    list-style-type: none;
-    display: flex;
-    padding: 0;
-    margin: 0;
-    overflow-x: auto; /* Enables horizontal scrolling for smaller screens */
-}
-
-.nav-menu li {
-    margin-right: 20px;
-}
-
-.nav-menu li a {
-    text-decoration: none;
-    color: #ffffff; /* White text for visibility on dark background */
-    font-size: 16px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-menu li a:hover {
-    background-color: #3a3053; /* A lighter shade for hover effect */
-    color: #ffffff;
-}
-
-/* Optional: Active Link Styling */
-.nav-menu li a.active {
-    background-color: #584466; /* Highlight the active page */
-    color: #ffffff;
-}
-
-
-
-
-    </style>
-    
-
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    
-    <title>search</title>
 </head>
 <body>
-     <!-- Sidebar Section -->
-    
-     <div class="sidebar">
-        <div class="sidebar-nav">
-            <div class="logo">
-                <img src="logoo.png" alt="Logo" width="200" height="200">
-            </div>
-           
-
-            <ul>
-                <li><a href="home.php">
-                    <span><i class="fa-solid fa-house"></i></span>
-                    <span>Home</span>
-                </a></li>
-
-                <li><a href="search.php">
-                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
-                    <span>Search & Discovery</span>
-                </a></li>
-
-                <li><a href="library.php">
-                    <span><i class="fa-solid fa-book-open"></i></span>
-                    <span>Library</span>
-                </a></li>
-
-                <li><a href="#">
-                    <span><i class="fa-solid fa-download"></i></span>
-                    <span>Download</span>
-                </a></li>
-
-                <li><a href="#">
-                    <span><i class="fa-solid fa-box"></i></span>
-                    <span>Package</span>
-                </a></li>
-
-                <li><a href="#">
-                    <span><i class="fa-solid fa-user"></i></span>
-                    <span>User Profile</span>
-                </a></li>
-
-                <li><a href="#">
-                    <span><i class="fa-solid fa-gear"></i></span>
-                    <span>Settings</span>
-                </a></li>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">FUNIX</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" href="search.php">Search</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Videos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Favorites</a></li>
+                <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
+                <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
             </ul>
-
-            <!-- Privacy Section -->
-            
-            <div class="privacy">
-                <ul>
-                    <li>
-                        <a href="about.php">About Us</a><br>
-                        <a href="privacy policy.php">Privacy Policy</a>
-                    </li>
-                </ul>
-            </div>
         </div>
     </div>
+</nav>
 
-    <div class="main-section">
-        <div class="top-nav">
-            <div class="prev-btn">
-                <h3 style="color:white;font-width:500;font-family: Arial, Helvetica, sans-serif;">Funix - Music,Video & Funless Fun</h3>
+<header class="text-center py-4">
+    <h1>Search for Music & Videos</h1>
+</header>
 
-            </div>
+<main class="container my-5">
+    <!-- Search Form -->
+    <form method="POST" class="search-form d-flex justify-content-center align-items-center">
+        <input type="text" name="search_query" placeholder="Search by title or artist..." required>
+        <button type="submit" name="search"><i class="fas fa-search"></i> Search</button>
+    </form>
 
-            <div class="login-btn">
-                <button class="login"><a href="login.php">login</a>
-                
-                <?php 
-       if(isset($_SESSION['email'])){
-        $email=$_SESSION['email'];
-        $query=mysqli_query($conn, "SELECT users.* FROM `users` WHERE users.email='$email'");
-        while($row=mysqli_fetch_array($query)){
-            echo $row['firstName'].' '.$row['lastName'];
-        }
-       }
-       ?></button>
+    <!-- Message -->
+    <?php if (!empty($message)): ?>
+        <p class="text-center mt-4 alert alert-warning"><?= $message ?></p>
+    <?php endif; ?>
 
-
-
-
-                <button class="register"><a href="register.php">Register</a></button>
-
-            </div>
-            
-        </div>
-
-        <div class="nav-container">
-        <ul class="nav-menu">
-            <li><a href="#">All</a></li>
-            <li><a href="#">Music</a></li>
-            <li><a href="#">Songs</a></li>
-            <li><a href="#">Films</a></li>
-            <li><a href="#">Tv series</a></li>
-            <li><a href="#">Country</a></li>
-            <li><a href="#">Mixes</a></li>
-            <li><a href="#">Playlists</a></li>
-            <li><a href="#">Top hits</a></li>
-            <li><a href="#">Popular</a></li>
-            <li><a href="#">New release</a></li>
-            
-        </ul>
-    </div><br><br>
-
-    <h1 style="text-align: center; color:white">Search & Discovery</h1><br>
-
-
-       <!-- Search Bar -->
-        <div class="container">
-        <form class="d-flex me-3" role="search" method="POST" action="search.php">
-        <input class="form-control me-2" type="search" name="query" placeholder="Search for music, videos, or artists" aria-label="Search">
-        <button class="btn btn-outline-light" type="submit">Search</button>
-        </form>
-
-      </div>
-     <br><br>
-
-     
-<div class="container">
-    <?php if (isset($result) && mysqli_num_rows($result) > 0): ?>
-        <h4 style="color:white; font-size:22px">Search Results</h4>
+    <!-- Search Results -->
+    <?php if (!empty($search_results) && mysqli_num_rows($search_results) > 0): ?>
+        <h2 class="text-center my-4">Search Results</h2>
         <div class="row">
-            <?php while ($row = mysqli_fetch_assoc($result)): ?>
-                <div class="col-md-4 col-lg-3">
-                    <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="...">
-                        <div class="play-btn">
-                            <a href="Ananthayen Aa Tharu Kumara Song.mp4"><i class="fa-solid fa-play"></i></a>
+            <?php while ($result = mysqli_fetch_assoc($search_results)): ?>
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="card bg-dark text-light">
+                        <div class="card-body">
+                            <h5 class="card-title"><?= $result['title'] ?></h5>
+                            <p class="card-text">Artist: <?= $result['artist'] ?></p>
+                            <p class="card-text">Category: <?= $result['category'] ?></p>
                         </div>
-                        <h4><?php echo htmlspecialchars($row['title']); ?>Ananthayen Aa Tharu Kumara </h4>
-                        <p><?php echo htmlspecialchars($row['artist']); ?></p>
                     </div>
                 </div>
             <?php endwhile; ?>
         </div>
-    <?php elseif (isset($result)): ?>
-        <p style="color:white;">No results found for "<?php echo htmlspecialchars($query); ?>"</p>
-    <?php else: ?>
-        <p style="color:white;">Error executing the query. Please check your database connection and query.</p>
     <?php endif; ?>
-</div>
+</main></div>
 
-
-
-     <div class="container">
-  <div class="recommended-for-you">
-      <h4 style="color:white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;font-size:22px">Recommended For You</h4>
-  </div>
-</div>
-
-
-  
-<div class="container">
-    <div class="row">
-        <!-- Card 1 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="https://youtu.be/jfcguJz-KVc?si=fFm7828WP1Hp8cQH"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="Ananthayen Aa Tharu Kumara Song.mp4"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Ananthayen Aa Tharu Kumara Song</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-    </div>("<br>")
-
-    <!-- Row 2 -->
-    <div class="row">
-        <!-- Card 5 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 7 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 8 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-    </div>("<br>")
-
-    <!-- Row 3 -->
-    <div class="row">
-        <!-- Card 9 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 10 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 11 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Card 12 -->
-        <div class="col-md-4 col-lg-3">
-            <div class="card">
-                <div class="item">
-                    <img src="a8.jpg" class="card-img-top" alt="...">
-                    <div class="play-btn">
-                        <a href="song3.html"><i class="fa-solid fa-play"></i></a>
-                    </div>
-                    <h4>Song Title</h4>
-                    <p>Artist Name</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> ("<br>")
-
-
-
-
-<div class="col-md-4 col-lg-3">
-    <div class="card shadow-lg border-0 rounded-3">
-        <div class="item">
-            <!-- Card image with rounded corners and hover effect -->
-            <img src="a8.jpg" class="card-img-top rounded-3" alt="Song Image">
-            
-            <!-- Play button with a subtle hover effect -->
-            <div class="play-btn position-absolute top-50 start-50 translate-middle">
-                <a href="song3.html" class="btn btn-light rounded-circle p-3">
-                    <i class="fa-solid fa-play text-primary" style="font-size: 2rem;"></i>
-                </a>
-            </div>
-        </div>
-        
-        <!-- Card content -->
-        <div class="card-body text-center p-4">
-            <h4 class="card-title text-black mb-2" style="font-family: 'Arial', sans-serif;">Song Title</h4>
-            <p class="card-text text-dask" style="font-size: 0.9rem;">Artist Name</p>
-        </div>
-    </div>
-</div><br>
-
-
-
-<footer class="text-light pt-5" style="background-color: #1c1224;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <img src="logoo.png" alt="Logo" width="150" height="150">
-                <h5>Funix</h5>
-                <p>At Funix, music and video inspire, connect, and entertain. Enjoy hits, classics, series, and indie exclusives all at your fingertips.</p>
-            </div>
-            <div class="col-md-3">
-                <h5>Using link</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-light">Home</a></li><br>
-                    <li><a href="#" class="text-light">Playlists</a></li><br>
-                    <li><a href="#" class="text-light">User profile</a></li><br>
-                    <li><a href="#" class="text-light">About us</a></li><br>
-                    <li><a href="#" class="text-light">Package</a></li><br>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <h5>Support</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#" class="text-light">Settings</a></li><br>
-                    <li><a href="#" class="text-light">Edit profile</a></li><br>
-                    <li><a href="#" class="text-light">Privacy Policy</a></li><br>
-                    <li><a href="#" class="text-light">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="col-md-3">
-                <h5>Follow us</h5><br>
-                <div>
-                    <a href="#" class="text-light me-3"><i class='bx bxl-twitter'></i></a>
-                    <a href="#" class="text-light me-3"><i class='bx bxl-instagram'></i></a>
-                    <a href="#" class="text-light"><i class='bx bxl-facebook-circle'></i></a>
-                </div>
-            </div>
-        </div>
-        <hr class="my-4 text-light">
-        <div class="d-flex justify-content-between align-items-center">
-            <p class="mb-0">© 2024 MusicStream. All rights reserved.</p>
-        </div>
-    </div>
+<footer class="text-center text-light py-3 bg-dark">
+    <p>© 2024 Funix. All Rights Reserved | Follow us on:
+        <a href="#"><i class="bx bxl-twitter text-primary"></i></a>
+        <a href="#"><i class="bx bxl-facebook text-info"></i></a>
+        <a href="#"><i class="bx bxl-instagram text-danger"></i></a>
+    </p>
 </footer>
-
-
-<!-- Include Boxicons Library -->
-<link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-
-
-
-<?php
-// Close the database connection
-mysqli_close($conn);
-?>
-      
 </body>
 </html>

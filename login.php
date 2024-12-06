@@ -1,94 +1,86 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "final";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$message = "";
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $type = $_POST['type'];
+    $email_or_username = trim($_POST['email_or_username']);
+    $password = trim($_POST['password']);
+
+    // Validate inputs
+    if (empty($email_or_username) || empty($password)) {
+        $message = "<div class='error'>All fields are required!</div>";
+    } else {
+        if ($type == 'user') {
+            $sql = "SELECT * FROM users WHERE email = '$email_or_username'";
+        } else if ($type == 'admin') {
+            $sql = "SELECT * FROM admin WHERE username = '$email_or_username'";
+        }
+
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            if (password_verify($password, $row['password'])) {
+                $_SESSION['loggedin'] = true;
+                $_SESSION['type'] = $type;
+                $_SESSION['name'] = $type == 'user' ? $row['first_name'] . " " . $row['last_name'] : $row['username'];
+
+                // Redirect to the appropriate dashboard
+                if ($type == 'user') {
+                    header("Location: home.php"); // Redirect to user home page
+                } else if ($type == 'admin') {
+                    header("Location: admin_dashboard.php"); // Redirect to admin dashboard
+                }
+                exit;
+            } else {
+                $message = "<div class='error'>Invalid password!</div>";
+            }
+        } else {
+            $message = "<div class='error'>No user found with the provided credentials!</div>";
+        }
+    }
+}
+
+$conn->close();
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register & Login</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <title>Login</title>
 </head>
 <body>
-
-<div class="main-container">
-        
-        <div class="left-side">
-            <img src="logoo.png" alt="" width="300px" height="300px">
-            <h1>Welcome to  FUNIX</h1>
-            <p style=font: size 20px;>
-            Funix is a dynamic and innovative music and video streaming platform, designed to offer users an immersive and personalized entertainment experience. We are a team of passionate music lovers and movie enthusiasts who are dedicated to curating the best content from around the world. Our mission is to create a platform where users can discover, enjoy, and share their favorite tunes and videos with ease. 
-            </p>
-        </div>
-  
-     <div class="right-side">
-    <div class="container" id="signup" style="display:none;">
-      <h1 class="form-title">Register</h1>
-      <form method="post" action="register.php">
-        <div class="input-group">
-           <i class="fas fa-user"></i>
-           <input type="text" name="fName" id="fName" placeholder="First Name" required>
-           <label for="fname">First Name</label>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-user"></i>
-            <input type="text" name="lName" id="lName" placeholder="Last Name" required>
-            <label for="lName">Last Name</label>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-envelope"></i>
-            <input type="email" name="email" id="email" placeholder="Email" required>
-            <label for="email">Email</label>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="password" id="password" placeholder="Password" required>
-            <label for="password">Password</label>
-        </div>
-       <input type="submit" class="btn" value="Sign Up" name="signUp">
-      </form>
-      <p class="or">
-        ----------or--------
-      </p>
-      <div class="icons">
-        <i class="fab fa-google"></i>
-        <i class="fab fa-facebook"></i>
-      </div>
-      <div class="links">
-        <p>Already Have Account ?</p>
-        <button id="signInButton">Sign In</button>
-       
-      </div>
-    </div>
-
-    <div class="container" id="signIn">
-        <h1 class="form-title">Sign In</h1>
-        <form method="post" action="register.php">
-          <div class="input-group">
-              <i class="fas fa-envelope"></i>
-              <input type="email" name="email" id="email" placeholder="Email" required>
-              <label for="email">Email</label>
-          </div>
-          <div class="input-group">
-              <i class="fas fa-lock"></i>
-              <input type="password" name="password" id="password" placeholder="Password" required>
-              <label for="password">Password</label>
-          </div>
-          <p class="recover">
-            <a href="#">Recover Password</a>
-          </p>
-         <input type="submit" class="btn" value="Sign In" name="signIn">
-        </form>
-        <p class="or">
-          ----------or--------
-        </p>
-        <div class="icons">
-          <i class="fab fa-google"></i>
-          <i class="fab fa-facebook"></i>
-        </div>
-        <div class="links">
-          <p>Don't have account yet?</p>
-          <button id="signUpButton">Sign Up</button>
-        </div>
-      </div></div></div>
-      <script src="script.js"></script>
+<div class="container">
+    <h2>Login</h2>
+    <?= $message ?>
+    <form action="login.php" method="POST">
+        <label for="type">Login as:</label>
+        <select name="type" required>
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+        </select>
+        <label for="email_or_username">Email (User) / Username (Admin):</label>
+        <input type="text" name="email_or_username" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+        <button type="submit">Login</button>
+        <button type="submit"><a href="register.php">Registration</a></button>
+    </form>
+</div>
 </body>
 </html>

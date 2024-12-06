@@ -1,0 +1,221 @@
+/* General Body Style */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2b193d; /* Dark Purple */
+    color: white;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1c1224; /* Slightly darker shade */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e0c3f0; /* Light Purple */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e0c3f0; /* Light Purple */
+}
+
+/* Logout Button */
+.logout-btn {
+    background-color: #e0c3f0; /* Light Purple */
+    color: #2b193d;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #c9a3d9; /* Hover effect */
+    color: #2b193d;
+}
+
+/* Main Content */
+.content {
+    text-align: center;
+    padding: 20px;
+}
+
+.content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #e0c3f0;
+}
+
+.content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Buttons in Main Content */
+.action-btn {
+    background-color: #e0c3f0;
+    color: #2b193d;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px;
+    transition: background-color 0.3s;
+}
+
+.action-btn:hover {
+    background-color: #c9a3d9;
+}
+
+/* Container Sections */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.container h4 {
+    margin-bottom: 10px;
+    color: #e0c3f0;
+}
+
+/* Advertisement Box */
+.advertisement-box {
+    background-color: #431c52; /* Darker Purple */
+    color: white;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 10px;
+    text-align: center;
+    display: none; /* Hidden by default */
+}
+
+.ad-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.btn-warning {
+    background-color: #e0c3f0;
+    color: #2b193d;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-warning:hover {
+    background-color: #c9a3d9;
+}
+
+/* Cards for Popular, New Releases, and Top Hits */
+.card {
+    background-color: #4b474d;
+    color: white;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.card h4, .card p {
+    margin: 10px 0;
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #e0c3f0;
+    border-radius: 50%;
+    padding: 10px;
+    display: none;
+    cursor: pointer;
+}
+
+.card:hover .play-btn {
+    display: block;
+}
+
+/* Footer */
+footer {
+    background-color: #1c1224;
+    padding: 20px 0;
+    color: white;
+}
+
+footer h5 {
+    font-size: 1.2rem;
+    color: #e0c3f0;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin: 5px 0;
+}
+
+footer ul a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer ul a:hover {
+    color: #e0c3f0;
+}
+
+footer .social-icons a {
+    color: white;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #e0c3f0;
+}

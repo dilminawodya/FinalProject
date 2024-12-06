@@ -1,210 +1,67 @@
-* {   
+/* General Body Style */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2b193d; /* Dark Purple */
+    color: white;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Setting the body background color to blue */
-body {
-    background-color: blue;
-    font-family: Arial, Helvetica, sans-serif;
+/* Header */
+header h1 {
+    color: #e0c3f0; /* Light Purple */
+    font-weight: bold;
 }
 
-/* Sidebar styling */
-.sidebar {
-    width: 300px;
-    background: #302936;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
+/* Search Form */
+.search-form {
+    margin: 20px auto;
+    width: 80%;
+    display: flex;
+    gap: 10px;
+}
+
+.search-form input {
+    flex: 1;
     padding: 10px;
+    border: 1px solid #e0c3f0;
+    border-radius: 5px;
+    background-color: #1c1224;
+    color: white;
 }
 
-/* Sidebar navigation styling */
-.sidebar-nav {
-    background: rgb(42, 41, 60);
-    border-radius: 10px;
-    padding: 20px 10px;
-    margin-bottom: 10px;
-}
-
-.sidebar-nav ul {
-    list-style: none;
-}
-
-.sidebar-nav ul li {
+.search-form button {
     padding: 10px 20px;
-}
-
-/* Link styles */
-.sidebar-nav ul li a {
-    text-decoration: none;
-    color: antiquewhite;
-    font-size: 16px;
-    font-weight: 600;
+    background-color: #e0c3f0;
+    border: none;
+    border-radius: 5px;
+    color: #2b193d;
+    cursor: pointer;
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
-.sidebar-nav ul li a:hover {
-    color: beige;
+.search-form button:hover {
+    background-color: #c9a3d9;
 }
 
-.sidebar-nav ul li a i {
-    font-size: 20px;
-    margin-right: 10px;
-}
-
-/* Privacy section styles */
-.privacy ul li a {
-    text-decoration: none;
-    color: rgb(242, 236, 236);
-    font-size: 12px;
-    font-weight: 200;
-    margin: 0 6px;
-}
-
-.privacy ul {
-    padding-bottom: 5px;
-    margin-top: 10px;
-}
-
-/* Logo styling */
-.logo {
-    text-align: center;
-    margin-bottom: 20px;
-}
-.main-section{
-    margin-left: 300px;
-    background: #261e3c;
-    height: 100vh;
-}
-.main-section .top-nav{
-    padding: 20px 30px;
+/* Cards */
+.card {
     background: #1c1224;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border: none;
+    border-radius: 10px;
 }
-.main-section .top-nav  button {
-  
-    border: 0;
-    outline: 0;
-}
-.main-section .top-nav .prev-btn button i{
-   color: rgb(131, 114, 92);
-   font-size: 22px;
-   margin-right: 10px;
-   
-}
-.top-nav .login-btn .login{
-    color: rgb(47, 52, 50);
-    font-size: 16px;
-    font-weight: 600;
-    margin-right: 25px;
-}
-.top-nav .login-btn .login:hover{
-    color: azure;
-     
-}
-.top-nav .login-btn .login{
-    color: rgb(47, 52, 50);
-    font-size: 16px;
-    font-weight: 600;
-    background: #e0dee6;
-    padding: 6px 10px;
-    border-radius: 20px;
-}
-.top-nav .login-btn .login{
-    background: #c3acd9;
-}
-.top-nav .login-btn .register{
-    color: rgb(47, 52, 50);
-    font-size: 16px;
-    font-weight: 600;
-    background: #e0dee6;
-    padding: 6px 10px;
-    border-radius: 20px;
-}
-.top-nav .login-btn .register{
-    background: #c3acd9;}
-    
-.top-nav .login-btn .register:hover{
-        color: azure;
-         
-    }
 
-    .recommended-for-you{
-        padding: 20px 40px;
-    
-    }
-    .recommended-for-you h4{
-        color: rgb(5, 48, 133);
-        font-size: 20px;
-        margin-bottom: 10px;
-    }  
+.card-title {
+    color: #e0c3f0;
+}
 
-    .card:hover {
-        transform: scale(1.05); /* Slightly zoom the card on hover */
-        transition: transform 0.3s ease; /* Smooth transition */
-    }
-    
-    .card-img-top:hover {
-        opacity: 0.85; /* Slight opacity change on hover */
-    }
-    
-    .play-btn a:hover {
-        background-color: rgba(255, 255, 255, 0.7); /* Light background on hover */
-        transition: background-color 0.3s ease;
-    }
-    
-    .card-title {
-        font-size: 1.1rem;
-        font-weight: bold;
-    }
-    
-    .card-text {
-        font-size: 0.9rem;
-        color: #aaa;
-    }
-    footer h5 {
-        font-family: 'Arial', sans-serif;
-        font-weight: bold;
-        margin-bottom: 15px;
-    }
-    
-    footer ul {
-        padding-left: 0;
-    }
-    
-    footer ul li a {
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    
-    footer ul li a:hover {
-        color: #007bff; /* Bootstrap primary color */
-    }
-    
-    footer form input {
-        border-radius: 0.25rem;
-        padding: 0.5rem;
-    }
-    
-    footer form button {
-        border-radius: 0.25rem;
-    }
-    
-    footer .bi {
-        font-size: 1.5rem;
-        transition: color 0.3s ease;
-    }
-    
-    footer .bi:hover {
-        color: #007bff;
-    }
+.card-text {
+    color: #b8b8d6;
+}
 
-    
-    
-    
+/* Footer */
+footer {
+    font-size: 0.9rem;
+}
