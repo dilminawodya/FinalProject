@@ -32,7 +32,7 @@ $result = mysqli_query($conn, "SELECT * FROM playlists");
 <head>
     <meta charset="UTF-8">
     <title>Manage Playlists</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-playlist.css">
 </head>
 <body>
 <div class="main">
@@ -48,6 +48,8 @@ $result = mysqli_query($conn, "SELECT * FROM playlists");
         <button type="submit" name="add_playlist">Add Playlist</button>
         <button type="submit" name="update_playlist">Update Playlist</button>
     </form>
+
+    <a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
     <h2>Playlist List</h2>
     <table>
         <tr>

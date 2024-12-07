@@ -38,7 +38,7 @@ $result = mysqli_query($conn, "
 <head>
     <meta charset="UTF-8">
     <title>Manage Albums</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-album.css">
 </head>
 <body>
 <div class="main">
@@ -64,6 +64,8 @@ $result = mysqli_query($conn, "
         <button type="submit" name="add_album">Add Album</button>
         <button type="submit" name="update_album">Update Album</button>
     </form>
+
+    <a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
     <h2>Album List</h2>
     <table>
         <tr>

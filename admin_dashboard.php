@@ -55,10 +55,25 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'admin') {
                     <a href="admin_payments.php">Go to Payments</a>
                 </div>
                
+            </div><br>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Manage Albums</h3>
+                    <p>View and update artist album.</p>
+                    <a href="admin_albums.php">Go to Albums</a>
+                </div>
+                <div class="card">
+                    <h3>View Search Logs</h3>
+                    <p>view and update search logs.</p>
+                    <a href="admin_search_logs.php">Go to Search</a>
+                </div>
+               
+               
             </div>
         </section>
 
-        <a href="logout.php" class="logout-btn">Logout</a>
+        <a href="login.php" class="logout-btn">Logout</a>
     </div>
 </body>
 </html>

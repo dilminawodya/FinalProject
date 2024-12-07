@@ -20,7 +20,7 @@ $result = mysqli_query($conn, "
 <head>
     <meta charset="UTF-8">
     <title>Manage Search Logs</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-search.css">
 </head>
 <body>
 <div class="main">
@@ -48,5 +48,6 @@ $result = mysqli_query($conn, "
         <?php endwhile; ?>
     </table>
 </div>
+<a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
 </body>
 </html>

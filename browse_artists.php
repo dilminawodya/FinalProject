@@ -64,7 +64,7 @@
         }
         ?>
     </main>
-
+    
     <!-- Footer -->
     <footer>
         <p>© 2024 Funix. All Rights Reserved | Follow us on:

@@ -32,7 +32,7 @@ $result = mysqli_query($conn, "SELECT * FROM artists");
 <head>
     <meta charset="UTF-8">
     <title>Manage Artists</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-artist.css">
 </head>
 <body>
 <div class="main">
@@ -48,6 +48,7 @@ $result = mysqli_query($conn, "SELECT * FROM artists");
         <button type="submit" name="add_artist">Add Artist</button>
         <button type="submit" name="update_artist">Update Artist</button>
     </form>
+    <a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
     <h2>Artist List</h2>
     <table>
         <tr>
@@ -74,6 +75,7 @@ $result = mysqli_query($conn, "SELECT * FROM artists");
         <?php endwhile; ?>
     </table>
 </div>
+
 
 <script>
 function editArtist(artist) {

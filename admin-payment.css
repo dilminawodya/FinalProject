@@ -1,0 +1,138 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2a0845; /* Dark purple background */
+    color: #ffffff;
+}
+
+/* Main Container */
+.main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+}
+
+/* Form Styling */
+form {
+    background-color: #3e125f; /* Slightly lighter purple */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #e0c3f0; /* Soft pastel color for contrast */
+}
+
+form input, 
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #e0c3f0;
+    color: #3e125f;
+}
+
+/* Button Styling */
+form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button[name="add_payment"] {
+    background-color: #6a1b9a; /* Purple button for adding */
+    color: #ffffff;
+}
+
+form button[name="add_payment"]:hover {
+    background-color: #8e24aa; /* Hover effect for add button */
+}
+
+form button[name="update_payment"] {
+    background-color: #e0c3f0; /* Soft pastel button for updating */
+    color: #3e125f;
+}
+
+form button[name="update_payment"]:hover {
+    background-color: #d1b3e0; /* Hover effect for update button */
+}
+
+/* Delete Button */
+form button[name="delete_payment"] {
+    background-color: #d32f2f; /* Red for delete */
+    color: #ffffff;
+}
+
+form button[name="delete_payment"]:hover {
+    background-color: #f44336; /* Hover for delete button */
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #3e125f; /* Matches form styling */
+    color: #ffffff;
+}
+
+table th, table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #33213f; /* Subtle border for rows */
+}
+
+table th {
+    background-color: #563769;
+    color: #ffffff;
+}
+
+table tr:hover {
+    background-color: #3b2742;
+}
+
+/* Edit Button */
+table button {
+    background-color: #8e24aa; /* Purple for Edit */
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+table button:hover {
+    background-color: #6a1b9a; /* Hover effect for edit */
+}
+
+/* Logout Button */
+.logout-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #e0c3f0;
+    color: #3e125f;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #d1b3e0;
+    color: #2a0845;
+}

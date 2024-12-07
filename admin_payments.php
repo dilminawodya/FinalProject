@@ -40,7 +40,7 @@ $result = mysqli_query($conn, "SELECT * FROM payment ORDER BY payment_date DESC"
 <head>
     <meta charset="UTF-8">
     <title>Manage Payments</title>
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="admin-payment.css">
 </head>
 <body>
 <div class="main">
@@ -64,6 +64,7 @@ $result = mysqli_query($conn, "SELECT * FROM payment ORDER BY payment_date DESC"
         <button type="submit" name="add_payment">Add Payment</button>
         <button type="submit" name="update_payment">Update Payment</button>
     </form>
+    <a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
     <h2>Payment List</h2>
     <table>
         <tr>
