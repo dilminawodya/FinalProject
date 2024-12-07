@@ -51,12 +51,14 @@ $conn->close();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
-    <title>Register</title>
+    <link rel="stylesheet" href="register.css">
+    <title>Funix | Register</title>
 </head>
 <body>
 <div class="container">
-    <h2>Register</h2>
+<img src="logoo.png" alt=""width=120px height=120px>
+    <h2>Welcome to Funix</h2>
+    <p class="description">Join Funix today! Create your account to explore a world of music and video streaming. Whether you're a user or admin, registering is simple and quick. Let's get started!</p>
     <?= $message ?>
     <form action="register.php" method="POST">
         <label for="type">Register as:</label>
@@ -64,17 +66,17 @@ $conn->close();
             <option value="user">User</option>
             <option value="admin">Admin</option>
         </select>
-        <label for="first_name">First Name (User only):</label>
+        <label for="first_name">First Name :</label>
         <input type="text" name="first_name">
-        <label for="last_name">Last Name (User only):</label>
+        <label for="last_name">Last Name :</label>
         <input type="text" name="last_name">
-        <label for="email_or_username">Email (User) / Username (Admin):</label>
+        <label for="email_or_username">Email  / Username :</label>
         <input type="text" name="email_or_username" required>
         <label for="password">Password:</label>
         <input type="password" name="password" required>
         <button type="submit">Register</button>
-        <button type="submit"><a href="login.php">Login</a></button>
     </form>
+    <a href="login.php" class="login-link">Already have an account? Login now!</a>
 </div>
 </body>
 </html>

@@ -1,0 +1,129 @@
+/* General Body Style */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2b193d; /* Dark Purple */
+    color: white;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1c1224; /* Slightly darker shade */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #e0c3f0; /* Light Purple */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e0c3f0; /* Light Purple */
+}
+
+/* Button Style */
+.btn-menu {
+    display: inline-block;
+    background-color: #3a3053; /* Button Background Color */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    padding: 10px 20px; /* Padding for balanced button dimensions */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center; /* Ensure the text is centered */
+}
+
+.btn-menu:hover {
+    background-color: #e0c3f0; /* Light Purple on Hover */
+    color: #1c1224; /* Dark text on hover */
+    transform: scale(1.05); /* Slightly enlarge */
+}
+
+/* Footer */
+footer {
+    background-color: #1c1224;
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+}
+
+footer h5 {
+    font-size: 1.2rem;
+    color: #e0c3f0;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+    display: inline-flex;
+    gap: 20px; /* Spacing between links */
+}
+
+footer ul li {
+    margin: 0;
+}
+
+footer ul a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+footer ul a:hover {
+    color: #e0c3f0;
+}
+
+footer .social-icons a {
+    color: white;
+    margin-right: 10px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+    color: #e0c3f0;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #1c1224;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+form input, form button {
+    padding: 10px;
+    font-siz
+}

@@ -61,12 +61,15 @@ $conn->close();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="style.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <title>Funix | Login</title>
 </head>
 <body>
+    
 <div class="container">
-    <h2>Login</h2>
+    <img src="logoo.png" alt=""width=120px height=120px>
+    <h2>Welcome to Funix</h2>
+    <p class="description">Funix is your ultimate platform for music and video streaming. Enjoy access to curated playlists, on-demand videos, and your personal favorites. Login to explore or register to join our growing community!</p>
     <?= $message ?>
     <form action="login.php" method="POST">
         <label for="type">Login as:</label>
@@ -79,8 +82,8 @@ $conn->close();
         <label for="password">Password:</label>
         <input type="password" name="password" required>
         <button type="submit">Login</button>
-        <button type="submit"><a href="register.php">Registration</a></button>
     </form>
+    <a href="register.php" class="register-link">Don't have an account? Register now!</a>
 </div>
 </body>
 </html>

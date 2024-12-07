@@ -12,8 +12,8 @@ include 'db_connect.php';
     <link rel="stylesheet" href="packages.css"> <!-- Updated Link to the CSS file -->
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <!-- Navigation Bar -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">FUNIX</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -32,6 +32,7 @@ include 'db_connect.php';
             </div>
         </div>
     </nav>
+    
 
     <!-- Header Section -->
     <header class="packages-header">

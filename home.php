@@ -33,7 +33,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
                     <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
                     <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -45,7 +45,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
         <p class="lead">Enjoy unlimited access to music and video streaming on our platform.</p>
         <div>
             <a href="#" class="btn btn-primary m-2">Browse Music</a>
-            <a href="#" class="btn btn-success m-2">Browse Videos</a>
+            <a href="comments_page.php " class="btn btn-success m-2">comment</a>
             <a href="#" class="btn btn-warning m-2">Your Favorites</a>
         </div>
     </div>

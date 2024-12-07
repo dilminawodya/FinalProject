@@ -20,8 +20,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
     <link rel="stylesheet" href="playlist.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+     <!-- Navigation Bar -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">FUNIX</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -30,16 +30,17 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="search.php">search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="search.php">Search</a></li>
                     <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
-                   
                     <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
+                    <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href=".php">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                 </ul>
             </div>
         </div>
-    </nav></div>
+    </nav>
+</div>
 
     <div class="menu-container">
     <ul class="nav-menu">
