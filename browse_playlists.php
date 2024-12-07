@@ -22,7 +22,8 @@
                     <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="search.php">Search</a></li>
                     <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
-                    <li class="nav-item"><a class="nav-link" href="favorites.php">Favorites</a></li>
+                    
+                    <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                 </ul>
@@ -33,7 +34,7 @@
     <ul class="nav-menu">
         <li><a href="library.php" class="btn-menu">Catalogue</a></li>
         <li><a href="browse_playlists.php" class="btn-menu">Playlist</a></li>
-        <li><a href="artist.php" class="btn-menu">Artists</a></li>
+        <li><a href="browse_artists.php" class="btn-menu">Artists</a></li>
     </ul>
 </div>
 

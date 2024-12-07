@@ -32,9 +32,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
                     <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="search.php">search</a></li>
                     <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Favorites</a></li>
+                   
+                    <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href=".php">Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -44,7 +45,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
     <ul class="nav-menu">
         <li><a href="library.php" class="btn-menu">Catalogue</a></li>
         <li><a href="browse_playlists.php" class="btn-menu">Playlist</a></li>
-        <li><a href="artist.php" class="btn-menu">Artists</a></li>
+        <li><a href="browse_artists.php" class="btn-menu">Artists</a></li>
     </ul>
 </div>
 
@@ -53,7 +54,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
     <!-- Page Header -->
     <header class="text-center py-4">
         <h1>Catalogue</h1>
-        <p>Explore a variety of playlists curated by our users and admins</p>
+        <p>Explore a variety of Catalogue curated by our users and admins</p>
     </header>
 <br>
 

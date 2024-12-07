@@ -30,7 +30,8 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
                     <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="search.php">Search</a></li>
                     <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Favorites</a></li>
+                    <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
+                    <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                     <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
                 </ul>
@@ -64,9 +65,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
                     <div class="card">
                         <img src="a8.jpg" class="card-img-top" alt="Song <?= $i ?>">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Song Title <?= $i ?></h5>
+                            <h5 class="card-title">ananthen aa tharu kumara <?= $i ?></h5>
                             <p class="card-text">Artist Name</p>
-                            <a href="#" class="btn btn-primary">Play</a>
+                            <a href="Ananthayen Aa Tharu Kumara Song.mp4" class="btn btn-primary">Play</a>
                         </div>
                     </div>
                 </div>

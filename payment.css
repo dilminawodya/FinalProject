@@ -1,0 +1,121 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #2b193d; /* Dark Purple */
+    color: white;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #3a3053; /* Darker Purple */
+    padding: 20px;
+    color: #e0c3f0; /* Light Purple */
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    color: #d1b3e0; /* Subtle Light Purple */
+}
+
+/* Form Section */
+.add-payment {
+    background-color: #1c1224;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.add-payment h1 {
+    color: #e0c3f0;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.add-payment form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-payment label {
+    color: #d1b3e0;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.add-payment input,
+.add-payment select {
+    background-color: #3a3053;
+    color: white;
+    border: 1px solid #e0c3f0;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.add-payment button {
+    background-color: #e0c3f0;
+    color: #2b193d;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-payment button:hover {
+    background-color: #d1b3e0;
+}
+
+/* Table Section */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #1c1224;
+}
+
+table thead {
+    background-color: #3a3053;
+    color: #e0c3f0;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #3a3053;
+}
+
+table tr:nth-child(even) {
+    background-color: #2b193d;
+}
+
+table tr:hover {
+    background-color: #3a3053;
+    color: #e0c3f0;
+}
+
+/* Footer */
+footer {
+    background-color: #1c1224;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+}
+
+footer p {
+    margin: 0;
+}

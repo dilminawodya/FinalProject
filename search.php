@@ -1,35 +1,25 @@
 <?php
-include 'db_connect.php';
-session_start();
+include 'db_connect.php'; // Connect to your database
 
-// Assuming the user ID is stored in session after login
-$user_id = $_SESSION['user_id'];
+// Handle Search Query Submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search_query'])) {
+    $search_query = mysqli_real_escape_string($conn, $_POST['search_query']);
+    
+    // Insert the search query into the 'search' table
+    $sql = "INSERT INTO search (query) VALUES ('$search_query')";
+    mysqli_query($conn, $sql);
 
-// Handle the search
-$search_results = [];
-$message = '';
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
-    $search_query = trim($_POST['search_query']);
-
-    if (!empty($search_query)) {
-        $sql = "INSERT INTO search_logs (user_id, search_query) VALUES ('$user_id', '$search_query')";
-        mysqli_query($conn, $sql);
-
-        // Fetch search results
-        $query = "
-            SELECT * FROM media 
-            WHERE title LIKE '%$search_query%' OR artist LIKE '%$search_query%'
-        ";
-        $search_results = mysqli_query($conn, $query);
-
-        if (mysqli_num_rows($search_results) === 0) {
-            $message = 'No results found for your search.';
-        }
-    } else {
-        $message = 'Please enter a search term.';
-    }
+    // Fetch search results based on the query
+    $search_results = mysqli_query($conn, "
+        SELECT * FROM media WHERE title LIKE '%$search_query%' OR artist LIKE '%$search_query%'
+    ");
 }
+
+// Fetch the user's recent search history (if needed)
+$recent_searches = mysqli_query($conn, "SELECT * FROM search ORDER BY timestamp DESC LIMIT 10");
+
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,8 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
                 <li class="nav-item"><a class="nav-link active" href="search.php">Search</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Videos</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Favorites</a></li>
+                <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
+             
+                <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
                 <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
                 <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
             </ul>
@@ -69,34 +60,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['search'])) {
 </header>
 
 <main class="container my-5">
-    <!-- Search Form -->
-    <form method="POST" class="search-form d-flex justify-content-center align-items-center">
-        <input type="text" name="search_query" placeholder="Search by title or artist..." required>
-        <button type="submit" name="search"><i class="fas fa-search"></i> Search</button>
-    </form>
 
-    <!-- Message -->
-    <?php if (!empty($message)): ?>
-        <p class="text-center mt-4 alert alert-warning"><?= $message ?></p>
-    <?php endif; ?>
+<h1>Search for Media</h1>
 
-    <!-- Search Results -->
-    <?php if (!empty($search_results) && mysqli_num_rows($search_results) > 0): ?>
-        <h2 class="text-center my-4">Search Results</h2>
-        <div class="row">
-            <?php while ($result = mysqli_fetch_assoc($search_results)): ?>
-                <div class="col-md-4 col-lg-3 mb-4">
-                    <div class="card bg-dark text-light">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $result['title'] ?></h5>
-                            <p class="card-text">Artist: <?= $result['artist'] ?></p>
-                            <p class="card-text">Category: <?= $result['category'] ?></p>
-                        </div>
-                    </div>
-                </div>
+<!-- Search Form -->
+<form method="POST">
+    <input type="text" name="search_query" placeholder="Search for songs, artists, etc." required>
+    <button type="submit">Search</button>
+</form>
+
+<?php if (isset($search_results)): ?>
+    <h2>Search Results</h2>
+    <?php if (mysqli_num_rows($search_results) > 0): ?>
+        <ul>
+            <?php while ($row = mysqli_fetch_assoc($search_results)): ?>
+                <li>
+                    <strong><?= $row['title'] ?></strong> by <?= $row['artist'] ?>
+                </li>
             <?php endwhile; ?>
-        </div>
+        </ul>
+    <?php else: ?>
+        <p>No results found.</p>
     <?php endif; ?>
+<?php endif; ?>
+
+<h2>Recent Searches</h2>
+<ul>
+    <?php while ($row = mysqli_fetch_assoc($recent_searches)): ?>
+        <li><?= $row['query'] ?> (<?= $row['timestamp'] ?>)</li>
+    <?php endwhile; ?>
+</ul>
+    
 </main></div>
 
 <footer class="text-center text-light py-3 bg-dark">
