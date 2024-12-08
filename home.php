@@ -60,54 +60,189 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
     <div class="container my-5">
         <h4 class="text-light">Popular This Week</h4>
         <div class="row">
-            <?php for ($i = 1; $i <= 5; $i++) : ?>
+        
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song <?= $i ?>">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">ananthen aa tharu kumara <?= $i ?></h5>
-                            <p class="card-text">Artist Name</p>
+                            <h5 class="card-title">Ananthen aa tharu kumara </h5>
+                            
                             <a href="Ananthayen Aa Tharu Kumara Song.mp4" class="btn btn-primary">Play</a>
                         </div>
                     </div>
                 </div>
-            <?php endfor; ?>
+
+                <div class="col-md-2">
+                    <div class="card"  >
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fhilori Hindi Movie</h5>
+                            
+                            <a href="FHILORI.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Abnormal music for you</h5>
+                            
+                            <a href="abnormal-for-you-255737.mp3" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ananthen aa tharu kumara </h5>
+                            
+                            <a href="Ananthayen Aa Tharu Kumara Song.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Frozen English Movie </h5>
+                            
+                            <a href="Frozen.2013.720p.BluRay.x264.YIFY.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+           
         </div>
     </div>
 
     <div class="container my-5">
         <h4 class="text-light">New Release</h4>
         <div class="row">
-            <?php for ($i = 1; $i <= 5; $i++) : ?>
+         
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song <?= $i ?>">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Song Title <?= $i ?></h5>
-                            <p class="card-text">Artist Name</p>
-                            <a href="#" class="btn btn-primary">Play</a>
+                            <h5 class="card-title">Arash - One day ft Helena </h5>
+                        
+                            <a href="Arash - One day ft Helena.mp3" class="btn btn-primary">Play</a>
                         </div>
                     </div>
                 </div>
-            <?php endfor; ?>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Becky_G_-_Bella_Ciao_Official_Video </h5>
+                            
+                            <a href="Becky G-Bella Ciao Official Video[GetVideo.watch].mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Dance Pe Chance Full Song  </h5>
+                            
+                            <a href="Dance Pe Chance _ Full Song _ Rab Ne Bana Di Jodi _ Shah Rukh Khan_ Anushka _ Sunidhi_ Labh Janjua_640x360.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Frozen English Movie  </h5>
+                            
+                            <a href="Frozen.2013.720p.BluRay.x264.YIFY.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Fhilori Hindi Movie </h5>
+                            
+                            <a href="FHILORI.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+            
         </div>
     </div>
 
     <div class="container my-5">
         <h4 class="text-light">Top Hits</h4>
         <div class="row">
-            <?php for ($i = 1; $i <= 5; $i++) : ?>
+            
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song <?= $i ?>">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Song Title <?= $i ?></h5>
-                            <p class="card-text">Artist Name</p>
-                            <a href="#" class="btn btn-primary">Play</a>
+                            <h5 class="card-title">Justin Bieber - Baby (Official Music Video)</h5>
+                            
+                            <a href="Justin Bieber - Baby (Official Music Video) ft. Ludacris_640x360.mp4" class="btn btn-primary">Play</a>
                         </div>
                     </div>
                 </div>
-            <?php endfor; ?>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Maari 2 - Rowdy Baby (Video Song)  </h5>
+                            <p class="card-text"></p>
+                            <a href="Maari 2 - Rowdy Baby (Video Song) Dhanush Sai Pallavi Yuvan Shankar Raja Balaji Mohan.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">NOZIYA KAROMATULLO - MAYDA-MAYDA  </h5>
+                            
+                            <a href="NOZIYA KAROMATULLO - MAYDA-MAYDA (CONCERT 'GIRYAI JON').mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+            
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Cover dance </h5>
+                            
+                            <a href="cover.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Abnormal music for you </h5>
+                            
+                            <a href="abnormal-for-you-255737.mp3" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+            
         </div>
     </div>
 

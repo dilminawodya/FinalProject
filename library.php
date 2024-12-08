@@ -59,126 +59,176 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
     </header>
 <br>
 
-    <div class="container">
-  <h4 style=color:gray>music</h4>
+<div class="container">
+  <h4 style="color: gray;">Music</h4>
   
-    <div class="row g-2">
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Popular Music</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Classical</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Traditional</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Film and Media Music</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Instrument</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Mental Health</button></div>
+  <div class="row g-2">
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="music.php" class="btn btn-light w-100">Popular Music</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="music.php" class="btn btn-light w-100">Classical</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="music.php" class="btn btn-light w-100">Traditional</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="music.php" class="btn btn-light w-100">Film and Media Music</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="music.php" class="btn btn-light w-100">Instrument</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="music.php" class="btn btn-light w-100">Mental Health</a>
     </div>
   </div>
+</div>
+
+  <br>
+  <div class="container">
+  <h4 style="color: gray;">Video</h4>
+  
+  <div class="row g-2">
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="video.php" class="btn btn-light w-100">Entertainment</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="education.html" class="btn btn-light w-100">Education</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="personal-lifestyle.html" class="btn btn-light w-100">Personal & Lifestyle</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="information-video.html" class="btn btn-light w-100">Information Video</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="kids-video.html" class="btn btn-light w-100">Kid's Video</a>
+    </div>
+  </div>
+</div>
+<br>
+
+  
+<div class="container">
+  <h4 style="color: gray;">Films</h4>
+  
+  <div class="row g-2">
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="all-films.html" class="btn btn-light w-100">All</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="horror.html" class="btn btn-light w-100">Horror</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="fantasy.html" class="btn btn-light w-100">Fantasy</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="thriller.html" class="btn btn-light w-100">Thriller</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="action.html" class="btn btn-light w-100">Action</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="romance.html" class="btn btn-light w-100">Romance</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="sinhala.html" class="btn btn-light w-100">Sinhala</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="bollywood.html" class="btn btn-light w-100">Bollywood</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="tamil.html" class="btn btn-light w-100">Tamil</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="animation.html" class="btn btn-light w-100">Animation</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="comedy.html" class="btn btn-light w-100">Comedy</a>
+    </div>
+  </div>
+</div>
+
   <br>
   
   <div class="container">
-  <h4 style=color:gray>Video</h4>
+  <h4 style="color: gray;">Songs</h4>
   
-    <div class="row g-2">
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Entertainment</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Education</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Personal & Lifestyle</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Information video</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Kid's video</button></div>
+  <div class="row g-2">
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="all-songs.html" class="btn btn-light w-100">All</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="romance-songs.html" class="btn btn-light w-100">Romance</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="rap-songs.html" class="btn btn-light w-100">Rap</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="sinhala-songs.html" class="btn btn-light w-100">Sinhala</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="english-songs.html" class="btn btn-light w-100">English</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="tamil-songs.html" class="btn btn-light w-100">Tamil</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="hindi-songs.html" class="btn btn-light w-100">Hindi</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="classical-songs.html" class="btn btn-light w-100">Classical</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="country-songs.html" class="btn btn-light w-100">Country</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="children-songs.html" class="btn btn-light w-100">Children</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="pop-songs.html" class="btn btn-light w-100">Pop</a>
     </div>
   </div>
-  <br>
+</div>
+<br>
+
   
-  <div class="container">
-  <h4 style=color:gray>Films</h4>
   
-    <div class="row g-2">
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">All</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Horror</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Fantasy</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Thriller</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Action</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Romance</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Sinhala</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Bollywood</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Tamil</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Animation</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Comedy</button></div>
+<div class="container">
+  <h4 style="color: gray;">Country</h4>
+  
+  <div class="row g-2">
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="music.php" class="btn btn-light w-100">All</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="english.html" class="btn btn-light w-100">English</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="bollywood.html" class="btn btn-light w-100">Bollywood</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="hollywood.html" class="btn btn-light w-100">Hollywood</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="sinhala.html" class="btn btn-light w-100">Sinhala</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="korean.html" class="btn btn-light w-100">Korean</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="chinese.html" class="btn btn-light w-100">Chinese</a>
+    </div>
+    <div class="col-6 col-sm-4 col-md-3">
+      <a href="others.html" class="btn btn-light w-100">Others</a>
     </div>
   </div>
-  <br>
-  
-  
-  <div class="container">
-  <h4 style=color:gray>Songs</h4>
-  
-    <div class="row g-2">
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">All</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Romance</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Rap</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Sinhala</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">English</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Tamil</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Hindi</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Classical</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Country</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Children</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Pop</button></div>
-    </div>
-  </div>
-  <br>
-  
-  <div class="container">
-  <h4 style=color:gray>TV Show</h4>
-  
-    <div class="row g-2">
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">All</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Drama</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Comedy</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Romance</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">English</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Horror</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Country</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Reality show</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Family</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Children</button></div>
-      
-    </div>
-  </div>
-  <br>
-  
-  <div class="container">
-  <h4 style=color:gray>Country</h4>
-  
-    <div class="row g-2">
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">All</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">English</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Bollywood</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Hollywood</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Sinhala</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Korean</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Chines</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Others</button></div>
-      
-    </div>
-  </div>
+</div>
+
   <br>
   
   
-  <div class="container">
-  <h4 style=color:gray>Vlogs</h4>
   
-    <div class="row g-2">
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">All</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">English</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Sinhala</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Family</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Travel</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Lifestyle</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Food</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Fashion & Beauty</button></div>
-      <div class="col-6 col-sm-4 col-md-3"><button class="btn btn-light w-100">Health</button></div>
-      
-    </div>
-  </div>
-  <br>
   
   
 
