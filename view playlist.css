@@ -1,0 +1,84 @@
+/* General Styles */
+body {
+    background-color: #2c0139; /* Dark purple */
+    color: #fff; /* Light text for readability */
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h4, h5 {
+    color: #e0e0e0; /* Light gray text for headings */
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container */
+.container {
+    padding: 20px;
+}
+
+/* Card Styles */
+.card {
+    background-color: #4a2a78; /* Slightly lighter purple for cards */
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+.card-img-top {
+    height: 150px;
+    object-fit: cover; /* Maintain aspect ratio and fill space */
+    border-radius: 15px 15px 0 0; /* Round the top corners */
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #f3f3f3; /* Light text for readability */
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.btn-primary {
+    background-color: #6a3db8; /* Custom purple for buttons */
+    border: none;
+    border-radius: 20px;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #8055d4; /* Slightly brighter purple */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Row Spacing */
+.row {
+    gap: 20px; /* Add spacing between cards */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card {
+        margin: 10px auto; /* Center cards on smaller screens */
+    }
+}

@@ -65,7 +65,9 @@
                 echo "</div>";
                 echo "</div>";
             }
+            
             ?>
+             <a href="view palylist.php" class="btn btn-secondary">View Plylists</a>
         </div>
     </main>
 

@@ -93,16 +93,16 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
       <a href="video.php" class="btn btn-light w-100">Entertainment</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="education.html" class="btn btn-light w-100">Education</a>
+      <a href="video.php" class="btn btn-light w-100">Education</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="personal-lifestyle.html" class="btn btn-light w-100">Personal & Lifestyle</a>
+      <a href="video.php" class="btn btn-light w-100">Personal & Lifestyle</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="information-video.html" class="btn btn-light w-100">Information Video</a>
+      <a href="video.php" class="btn btn-light w-100">Information Video</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="kids-video.html" class="btn btn-light w-100">Kid's Video</a>
+      <a href="video.php.html" class="btn btn-light w-100">Kid's Video</a>
     </div>
   </div>
 </div>
@@ -114,37 +114,37 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
   
   <div class="row g-2">
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="all-films.html" class="btn btn-light w-100">All</a>
+      <a href="video.php" class="btn btn-light w-100">All</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="horror.html" class="btn btn-light w-100">Horror</a>
+      <a href="video.php" class="btn btn-light w-100">Horror</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="fantasy.html" class="btn btn-light w-100">Fantasy</a>
+      <a href="video.php" class="btn btn-light w-100">Fantasy</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="thriller.html" class="btn btn-light w-100">Thriller</a>
+      <a href="video.php" class="btn btn-light w-100">Thriller</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="action.html" class="btn btn-light w-100">Action</a>
+      <a href="video.php" class="btn btn-light w-100">Action</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="romance.html" class="btn btn-light w-100">Romance</a>
+      <a href="video.php" class="btn btn-light w-100">Romance</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="sinhala.html" class="btn btn-light w-100">Sinhala</a>
+      <a href="video.php" class="btn btn-light w-100">Sinhala</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="bollywood.html" class="btn btn-light w-100">Bollywood</a>
+      <a href="video.php" class="btn btn-light w-100">Bollywood</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="tamil.html" class="btn btn-light w-100">Tamil</a>
+      <a href="video.php" class="btn btn-light w-100">Tamil</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="animation.html" class="btn btn-light w-100">Animation</a>
+      <a href="video.php" class="btn btn-light w-100">Animation</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="comedy.html" class="btn btn-light w-100">Comedy</a>
+      <a href="video.php" class="btn btn-light w-100">Comedy</a>
     </div>
   </div>
 </div>
@@ -156,37 +156,37 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
   
   <div class="row g-2">
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="all-songs.html" class="btn btn-light w-100">All</a>
+      <a href="video.php" class="btn btn-light w-100">All</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="romance-songs.html" class="btn btn-light w-100">Romance</a>
+      <a href="video.php" class="btn btn-light w-100">Romance</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="rap-songs.html" class="btn btn-light w-100">Rap</a>
+      <a href="video.php" class="btn btn-light w-100">Rap</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="sinhala-songs.html" class="btn btn-light w-100">Sinhala</a>
+      <a href="video.php" class="btn btn-light w-100">Sinhala</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="english-songs.html" class="btn btn-light w-100">English</a>
+      <a href="video.php" class="btn btn-light w-100">English</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="tamil-songs.html" class="btn btn-light w-100">Tamil</a>
+      <a href="video.php" class="btn btn-light w-100">Tamil</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="hindi-songs.html" class="btn btn-light w-100">Hindi</a>
+      <a href="video.php" class="btn btn-light w-100">Hindi</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="classical-songs.html" class="btn btn-light w-100">Classical</a>
+      <a href="video.php" class="btn btn-light w-100">Classical</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="country-songs.html" class="btn btn-light w-100">Country</a>
+      <a href="video.php" class="btn btn-light w-100">Country</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="children-songs.html" class="btn btn-light w-100">Children</a>
+      <a href="video.php" class="btn btn-light w-100">Children</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="pop-songs.html" class="btn btn-light w-100">Pop</a>
+      <a href="video.php" class="btn btn-light w-100">Pop</a>
     </div>
   </div>
 </div>
@@ -202,25 +202,25 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
       <a href="music.php" class="btn btn-light w-100">All</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="english.html" class="btn btn-light w-100">English</a>
+      <a href="video.php" class="btn btn-light w-100">English</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="bollywood.html" class="btn btn-light w-100">Bollywood</a>
+      <a href="video.php" class="btn btn-light w-100">Bollywood</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="hollywood.html" class="btn btn-light w-100">Hollywood</a>
+      <a href="video.php" class="btn btn-light w-100">Hollywood</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="sinhala.html" class="btn btn-light w-100">Sinhala</a>
+      <a href="video.php" class="btn btn-light w-100">Sinhala</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="korean.html" class="btn btn-light w-100">Korean</a>
+      <a href="video.php" class="btn btn-light w-100">Korean</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="chinese.html" class="btn btn-light w-100">Chinese</a>
+      <a href="video.php" class="btn btn-light w-100">Chinese</a>
     </div>
     <div class="col-6 col-sm-4 col-md-3">
-      <a href="others.html" class="btn btn-light w-100">Others</a>
+      <a href="video.php" class="btn btn-light w-100">Others</a>
     </div>
   </div>
 </div>

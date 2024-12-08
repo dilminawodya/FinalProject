@@ -46,7 +46,8 @@
     <header>
         <h1>Artists</h1>
         <p>Explore a variety of playlists curated by artists</p>
-    </header>
+    </header><br>
+    <a href="view artists.php" class="btn btn-secondary">View Artists</a>
 
     <!-- Artist Section -->
     <main class="container my-5">
@@ -66,7 +67,7 @@
         }
         ?>
     </main>
-    
+   
     <!-- Footer -->
     <footer>
         <p>© 2024 Funix. All Rights Reserved | Follow us on:
