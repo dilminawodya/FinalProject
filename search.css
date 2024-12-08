@@ -65,3 +65,94 @@ header h1 {
 footer {
     font-size: 0.9rem;
 }
+/* General container styles */
+.container {
+    padding: 2rem;
+    background-color: #3a005a; /* Dark purple background for contrast */
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+/* Section heading styles */
+h4 {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: #ffab91; /* Light accent color for headings */
+}
+
+/* Row styling */
+.row {
+    display: flex;
+    gap: 1rem; /* Add space between cards */
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* Card styling */
+.card {
+    background-color: #2e004f; /* Slightly darker purple for card background */
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Add subtle shadow for depth */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Card image styling */
+.card-img-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+    height: 150px;
+}
+
+/* Card body styling */
+.card-body {
+    padding: 1rem;
+    text-align: center;
+    color: #d1c4e9; /* Light purple text */
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+/* Button styles */
+.btn-primary {
+    background-color: #ff6f61; /* Bright color for contrast */
+    border: none;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #ff8f81; /* Slightly lighter hover effect */
+    box-shadow: 0 4px 8px rgba(255, 111, 97, 0.7);
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .col-md-2 {
+        flex: 1 0 45%; /* Make cards take up 45% of the row on smaller screens */
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-md-2 {
+        flex: 1 0 100%; /* Make cards stack on very small screens */
+        margin-bottom: 1rem;
+    }
+}
+

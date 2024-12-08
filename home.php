@@ -21,7 +21,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">FUNIX</a>
+            <a class="navbar-brand" href="homee.php">FUNIX</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -44,9 +44,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
         <h2>Welcome, <?= htmlspecialchars($_SESSION['name']) ?>!</h2>
         <p class="lead">Enjoy unlimited access to music and video streaming on our platform.</p>
         <div>
-            <a href="#" class="btn btn-primary m-2">Browse Music</a>
+            <a href="about.php" class="btn btn-primary m-2">About us</a>
             <a href="comments_page.php " class="btn btn-success m-2">comment</a>
-            <a href="#" class="btn btn-warning m-2">Your Favorites</a>
+            <a href="library.php" class="btn btn-warning m-2">Your favorites</a>
         </div>
     </div>
 
@@ -56,6 +56,23 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
         <button type="button" class="btn-close" onclick="closeAd()" aria-label="Close"></button>
     </div>
 
+    <div class="about-section">
+    
+    <div class="row align-items-center">
+        <div class="col-md-1"></div>
+        <div class="col-md-7">
+            <p class="text">
+                FUNIX - Music, Video & Endless Fun!<br><br>
+                At Funix, we believe that music and video are more than just forms of entertainment; they are powerful tools for connection, expression, and inspiration. Whether you're a fan of the latest chart-topping hits, songs, classic movies, binge-worthy TV series, or exclusive indie content, Funix is here to bring you a world of streaming possibilities right at your fingertips.
+            </p>
+        </div>
+        <div class="col-md-4 text-center">
+            <img src="logoo.png" alt="Funix Logo" class="about-logo" width=300px height=300px>
+        </div>
+    </div>
+</div>
+
+
     <!-- Popular This Week -->
     <div class="container my-5">
         <h4 class="text-light">Popular This Week</h4>
@@ -63,7 +80,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
         
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="OIP.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Ananthen aa tharu kumara </h5>
                             
@@ -74,18 +91,18 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
                 <div class="col-md-2">
                     <div class="card"  >
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song2.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Fhilori Hindi Movie</h5>
+                            <h5 class="card-title">Becky G-  Bella Ciao</h5>
                             
-                            <a href="FHILORI.mp4" class="btn btn-primary">Play</a>
+                            <a href="Becky_G_-_Bella_Ciao_Official_Video.mp4" class="btn btn-primary">Play</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="images.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Abnormal music for you</h5>
                             
@@ -96,7 +113,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="OIP.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Ananthen aa tharu kumara </h5>
                             
@@ -107,11 +124,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song4.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Frozen English Movie </h5>
+                            <h5 class="card-title">Dreamers offical.mp3</h5>
                             
-                            <a href="Frozen.2013.720p.BluRay.x264.YIFY.mp4" class="btn btn-primary">Play</a>
+                            <a href="C:\xampp\htdocs\FinalProject\Dreamers.mp3" class="btn btn-primary">Play</a>
                         </div>
                     </div>
                 </div>
@@ -125,7 +142,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
          
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song5.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Arash - One day ft Helena </h5>
                         
@@ -136,7 +153,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song2.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Becky_G_-_Bella_Ciao_Official_Video </h5>
                             
@@ -147,7 +164,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song6.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Dance Pe Chance Full Song  </h5>
                             
@@ -158,22 +175,22 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song7.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Frozen English Movie  </h5>
+                            <h5 class="card-title">Oh Na Na Na.mp3 </h5>
                             
-                            <a href="Frozen.2013.720p.BluRay.x264.YIFY.mp4" class="btn btn-primary">Play</a>
+                            <a href="Oh Na Na Na.mp3" class="btn btn-primary">Play</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song8.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Fhilori Hindi Movie </h5>
+                            <h5 class="card-title">Maari 2 - Rowdy Baby  </h5>
                             
-                            <a href="FHILORI.mp4" class="btn btn-primary">Play</a>
+                            <a href="Maari 2 - Rowdy Baby (Video Song) Dhanush Sai Pallavi Yuvan Shankar Raja Balaji Mohan.mp4" class="btn btn-primary">Play</a>
                         </div>
                     </div>
                 </div>
@@ -187,9 +204,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
             
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song9.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Justin Bieber - Baby (Official Music Video)</h5>
+                            <h5 class="card-title">Justin Bieber - Baby</h5>
                             
                             <a href="Justin Bieber - Baby (Official Music Video) ft. Ludacris_640x360.mp4" class="btn btn-primary">Play</a>
                         </div>
@@ -198,7 +215,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song8.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Maari 2 - Rowdy Baby (Video Song)  </h5>
                             <p class="card-text"></p>
@@ -209,9 +226,9 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song10.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">NOZIYA KAROMATULLO - MAYDA-MAYDA  </h5>
+                            <h5 class="card-title">NOZIYA KAROMATULLO  </h5>
                             
                             <a href="NOZIYA KAROMATULLO - MAYDA-MAYDA (CONCERT 'GIRYAI JON').mp4" class="btn btn-primary">Play</a>
                         </div>
@@ -223,7 +240,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song11.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Cover dance </h5>
                             
@@ -234,7 +251,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="images.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Abnormal music for you </h5>
                             

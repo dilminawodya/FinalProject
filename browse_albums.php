@@ -89,6 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                 ?>
             </div>
         </section>
+        <a href="view album.php" class="btn btn-secondary">View Albums</a>
 
         <!-- Add New Album Form -->
         <section class="add-album mt-5">

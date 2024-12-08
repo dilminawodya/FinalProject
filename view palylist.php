@@ -18,7 +18,7 @@
          
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song5.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Arash - One day ft Helena </h5>
                         
@@ -29,7 +29,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song2.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Becky_G_-_Bella_Ciao_Official_Video </h5>
                             
@@ -40,7 +40,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song6.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Dance Pe Chance Full Song  </h5>
                             
@@ -51,7 +51,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song15.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Junkook - 3D.mp3</h5>
                             
@@ -62,7 +62,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="OIP.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Ananthayen Aa Tharu Kumara Song.mp4 </h5>
                             
@@ -78,7 +78,7 @@
          
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song11.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">cover.mp4</h5>
                         
@@ -89,7 +89,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song2.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Becky_G_-_Bella_Ciao_Official_Video </h5>
                             
@@ -100,7 +100,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song6.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Dance Pe Chance Full Song  </h5>
                             
@@ -111,7 +111,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song16.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">BNS - Ai Kale Adare.mp4 </h5>
                             
@@ -122,7 +122,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song15.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Junkook - 3D.mp3</h5>
                             
@@ -138,7 +138,7 @@
          
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song5.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Arash - One day ft Helena </h5>
                         
@@ -149,7 +149,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song2.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Becky_G_-_Bella_Ciao_Official_Video </h5>
                             
@@ -160,7 +160,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song6.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Dance Pe Chance Full Song  </h5>
                             
@@ -171,7 +171,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song12.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Clean Bandit - Rockabye   </h5>
                             
@@ -182,9 +182,9 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song11.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">cover.mp4" </h5>
+                            <h5 class="card-title">cover.mp4 </h5>
                             
                             <a href="C:\xampp\htdocs\FinalProject\cover.mp4" class="btn btn-primary">Play</a>
                         </div>
@@ -198,7 +198,7 @@
          
         <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song5.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Arash - One day ft Helena </h5>
                         
@@ -209,7 +209,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song2.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Becky_G_-_Bella_Ciao_Official_Video </h5>
                             
@@ -220,7 +220,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song6.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Dance Pe Chance Full Song  </h5>
                             
@@ -231,7 +231,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="song15.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Junkook - 3D.mp3</h5>
                             
@@ -242,7 +242,7 @@
 
                 <div class="col-md-2">
                     <div class="card">
-                        <img src="a8.jpg" class="card-img-top" alt="Song ">
+                        <img src="OIP.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Ananthayen Aa Tharu Kumara Song.mp4 </h5>
                             

@@ -12,8 +12,9 @@ include 'db_connect.php';
     <link rel="stylesheet" href="packages.css"> <!-- Updated Link to the CSS file -->
 </head>
 <body>
-     <!-- Navigation Bar -->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">FUNIX</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -27,11 +28,12 @@ include 'db_connect.php';
                     <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
                     <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="logout.php">Logout</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">Logout</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    
     
 
     <!-- Header Section -->
@@ -40,6 +42,7 @@ include 'db_connect.php';
         <p>Find the package that fits your needs and enjoy premium content.</p>
     </header>
 
+   
     <!-- Packages Section -->
     <main class="packages">
         <div class="package-card">
@@ -61,6 +64,9 @@ include 'db_connect.php';
             <button onclick="window.location.href='bowser_payment.php'">Pay Now</button>
         </div>
     </main>
+
+   
+
 
     <!-- Footer -->
     <footer class="site-footer">

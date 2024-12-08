@@ -1,0 +1,58 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #241546;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.page-title {
+    color: #fcfafc;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.about-section {
+    margin-bottom: 2rem;
+}
+
+.section-title {
+    color: #e6dad9;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.text {
+    font-size: 1rem;
+    color: #cfcfcf;
+    text-align: justify;
+}
+
+.about-logo {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    height: auto;
+}
+
+.offer-list {
+    list-style-type: disc;
+    margin-left: 2rem;
+    color: #fffcfb;
+}
+
+.offer-list li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}

@@ -17,7 +17,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card">
                     <div class="item">
-                        <img src="a8.jpg" class="card-img-top" alt="...">
+                        <img src="images.jpg" class="card-img-top" alt="...">
                         <div class="play-btn">
                             <a href="abnormal-for-you-255737.mp3"><i class="fa-solid fa-play"></i></a>
                         </div>
@@ -31,7 +31,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card">
                     <div class="item">
-                        <img src="a8.jpg" class="card-img-top" alt="...">
+                        <img src="song5.jpg" class="card-img-top" alt="...">
                         <div class="play-btn">
                             <a href="Arash - One day ft Helena.mp3"><i class="fa-solid fa-play"></i></a>
                         </div>
@@ -44,7 +44,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card">
                     <div class="item">
-                        <img src="a8.jpg" class="card-img-top" alt="...">
+                        <img src="song12.jpg" class="card-img-top" alt="...">
                         <div class="play-btn">
                             <a href="Clean Bandit - Rockabye (feat. Sean Paul & Anne-Marie) [Official Video].mp3"><i class="fa-solid fa-play"></i></a>
                         </div>
@@ -57,7 +57,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card">
                     <div class="item">
-                        <img src="a8.jpg" class="card-img-top" alt="...">
+                        <img src="song13.jpg" class="card-img-top" alt="...">
                         <div class="play-btn">
                             <a href="Standing Next to you.mp3"><i class="fa-solid fa-play"></i></a>
                         </div>
@@ -71,7 +71,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card">
                     <div class="item">
-                        <img src="a8.jpg" class="card-img-top" alt="...">
+                        <img src="song14.jpg" class="card-img-top" alt="...">
                         <div class="play-btn">
                             <a href="Levitaing.mp3"><i class="fa-solid fa-play"></i></a>
                         </div>
@@ -85,7 +85,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card">
                     <div class="item">
-                        <img src="a8.jpg" class="card-img-top" alt="...">
+                        <img src="song15.jpg" class="card-img-top" alt="...">
                         <div class="play-btn">
                             <a href="Junkook - 3D.mp3"><i class="fa-solid fa-play"></i></a>
                         </div>
@@ -98,7 +98,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card">
                     <div class="item">
-                        <img src="a8.jpg" class="card-img-top" alt="...">
+                        <img src="song7.jpg" class="card-img-top" alt="...">
                         <div class="play-btn">
                             <a href="Oh Na Na Na.mp3"><i class="fa-solid fa-play"></i></a>
                         </div>
@@ -111,7 +111,7 @@
             <div class="col-md-4 col-lg-3">
                 <div class="card">
                     <div class="item">
-                        <img src="a8.jpg" class="card-img-top" alt="...">
+                        <img src="song4.jpg" class="card-img-top" alt="...">
                         <div class="play-btn">
                             <a href="Dreamers.mp3"><i class="fa-solid fa-play"></i></a>
                         </div>

@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_payment'])) {
 </head>
 <body>
 
+  
 
     <header>
         <h1> Payment </h1>
