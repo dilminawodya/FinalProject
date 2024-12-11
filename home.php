@@ -50,11 +50,23 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
         </div>
     </div>
 
-    <!-- Advertisement Section -->
-    <div id="ad-box" class="alert alert-warning text-center" role="alert" style="display: none;">
-        <strong>Special Offer:</strong> Enjoy 30% off on Funix Premium Subscription! Limited time only.
-        <button type="button" class="btn-close" onclick="closeAd()" aria-label="Close"></button>
+   
+ <!-- Advertisement Box -->
+ <div></div>
+    <div class="advertisement-box" id="ad-box">
+        <div class="ad-content">
+           <img src="add.jpeg" alt="Special Offer" class="ad-image" width=1300px height=300px>
+          
+        
+
+            <h3  style="color:;" > Special Offer on Funix Premium! </h3>
+            <p  style="color:; ">Enjoy 30% off on our Premium Subscription. Stream ad-free music and videos now! Limited time offer.</p>
+           
+            <button onclick="closeAd()" class="btn btn-warning">Close </button>
+        </div>
     </div>
+   
+        
 
     <div class="about-section">
     
@@ -62,6 +74,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
         <div class="col-md-1"></div>
         <div class="col-md-7">
             <p class="text">
+               
                 FUNIX - Music, Video & Endless Fun!<br><br>
                 At Funix, we believe that music and video are more than just forms of entertainment; they are powerful tools for connection, expression, and inspiration. Whether you're a fan of the latest chart-topping hits, songs, classic movies, binge-worthy TV series, or exclusive indie content, Funix is here to bring you a world of streaming possibilities right at your fingertips.
             </p>
@@ -71,6 +84,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
         </div>
     </div>
 </div>
+
 
 
     <!-- Popular This Week -->
@@ -177,7 +191,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
                     <div class="card">
                         <img src="song7.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Oh Na Na Na.mp3 </h5>
+                            <h5 class="card-title">Oh Na Na Na english song mp3 </h5>
                             
                             <a href="Oh Na Na Na.mp3" class="btn btn-primary">Play</a>
                         </div>
@@ -217,7 +231,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
                     <div class="card">
                         <img src="song8.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Maari 2 - Rowdy Baby (Video Song)  </h5>
+                            <h5 class="card-title">Maari 2 - Rowdy Baby  </h5>
                             <p class="card-text"></p>
                             <a href="Maari 2 - Rowdy Baby (Video Song) Dhanush Sai Pallavi Yuvan Shankar Raja Balaji Mohan.mp4" class="btn btn-primary">Play</a>
                         </div>
@@ -242,7 +256,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
                     <div class="card">
                         <img src="song11.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
-                            <h5 class="card-title">Cover dance </h5>
+                            <h5 class="card-title">Hindi Cover dance </h5>
                             
                             <a href="cover.mp4" class="btn btn-primary">Play</a>
                         </div>
@@ -275,14 +289,21 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
 
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JavaScript for Ad Behavior -->
     <script>
+        // Function to close the advertisement box
         function closeAd() {
-            document.getElementById('ad-box').style.display = 'none';
+            const adBox = document.getElementById('ad-box');
+            adBox.style.display = 'none';
         }
 
+        // Function to show the ad box after a delay (e.g., 5 seconds)
         setTimeout(() => {
-            document.getElementById('ad-box').style.display = 'block';
-        }, 5000);
+            const adBox = document.getElementById('ad-box');
+            adBox.style.display = 'flex';
+        }, 5000); // Show ad after 5 seconds
     </script>
+
 </body>
 </html>

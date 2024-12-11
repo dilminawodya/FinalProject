@@ -110,34 +110,51 @@ body {
     color: #e0c3f0;
 }
 
-/* Advertisement Box */
+/* Styles for Advertisement Box */
 .advertisement-box {
-    background-color: #431c52; /* Darker Purple */
-    color: white;
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
     padding: 20px;
-    margin: 20px auto;
+    background-color: #f7f7f7;
+    border: 2px solid #fff; /* White border */
     border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
     text-align: center;
-    display: none; /* Hidden by default */
+    flex-direction: column;
+    align-items: center;
 }
 
-.ad-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
+/* Advertisement Content Styles */
+.ad-content h3 {
+    margin: 0;
+    font-size: 1.8em;
+    color: #333;
 }
 
-.btn-warning {
-    background-color: #e0c3f0;
-    color: #2b193d;
-    padding: 10px 15px;
+.ad-content p {
+    margin: 15px 0;
+    color: #555;
+    font-size: 1em;
+}
+
+.ad-content button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 1em;
 }
 
-.btn-warning:hover {
-    background-color: #c9a3d9;
+.ad-content button:hover {
+    background-color: #0056b3;
 }
 
 /* Cards for Popular, New Releases, and Top Hits */

@@ -32,6 +32,7 @@ $recent_searches = mysqli_query($conn, "SELECT * FROM search ORDER BY timestamp 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <link rel="stylesheet" href="user search.css">
+    <script src="search.js" defer></script>
 </head>
 <body>  <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -62,27 +63,29 @@ $recent_searches = mysqli_query($conn, "SELECT * FROM search ORDER BY timestamp 
 <main class="container my-5">
 
 <h1>Search for Media</h1>
+ <!-- Search Form -->
+ <form method="POST">
+        <input type="text" id="search_query" name="search_query" placeholder="Search for songs, artists, etc." autocomplete="off">
+        <button type="submit">Search</button>
+    </form>
 
-<!-- Search Form -->
-<form method="POST">
-    <input type="text" name="search_query" placeholder="Search for songs, artists, etc." required>
-    <button type="submit">Search</button>
-</form>
+    <!-- Suggestions Dropdown -->
+    <div id="suggestions"></div>
 
-<?php if (isset($search_results)): ?>
-    <h2>Search Results</h2>
-    <?php if (mysqli_num_rows($search_results) > 0): ?>
-        <ul>
-            <?php while ($row = mysqli_fetch_assoc($search_results)): ?>
-                <li>
-                    <strong><?= $row['title'] ?></strong> by <?= $row['artist'] ?>
-                </li>
-            <?php endwhile; ?>
-        </ul>
-    <?php else: ?>
-        <p>No results found.</p>
+    <?php if (isset($search_results)): ?>
+        <h2>Search Results</h2>
+        <?php if (mysqli_num_rows($search_results) > 0): ?>
+            <ul>
+                <?php while ($row = mysqli_fetch_assoc($search_results)): ?>
+                    <li>
+                        <strong><?= $row['title'] ?></strong> by <?= $row['artist'] ?>
+                    </li>
+                <?php endwhile; ?>
+            </ul>
+        <?php else: ?>
+            <p>No results found.</p>
+        <?php endif; ?>
     <?php endif; ?>
-<?php endif; ?>
 
 <h2>Recent Searches</h2>
 <ul>

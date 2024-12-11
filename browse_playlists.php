@@ -71,6 +71,8 @@
         </div>
     </main>
 
+    
+
     <!-- Footer -->
     <footer class="text-center text-light py-3 bg-dark">
         <p>© 2024 Funix. All Rights Reserved | Follow us on:
