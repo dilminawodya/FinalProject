@@ -13,27 +13,7 @@ include 'db_connect.php';
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">FUNIX</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="search.php">Search</a></li>
-                    <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
-                    <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
-                    <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.php">Logout</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    
+
     
 
     <!-- Header Section -->
@@ -41,6 +21,19 @@ include 'db_connect.php';
         <h1>Choose Your Plan</h1>
         <p>Find the package that fits your needs and enjoy premium content.</p>
     </header>
+
+    
+  
+        <div class="ad-content"  >
+           <img src="addd.jpg" alt="Special Offer" class="ad-image"  width=1300px height=550px >
+          
+        
+
+            <h2  style="color:text-align: center;" > Special Offer on Funix Premium! </h2>
+            <p  style="color:text-align: center; ">Enjoy 30% off on our Premium Subscription. Stream ad-free music and videos now! Limited time offer.</p>
+           
+        
+    </div><br>
 
    
     <!-- Packages Section -->
@@ -65,6 +58,7 @@ include 'db_connect.php';
         </div>
     </main>
 
+   
    
 
 

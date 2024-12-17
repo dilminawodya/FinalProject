@@ -55,7 +55,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
  <div></div>
     <div class="advertisement-box" id="ad-box">
         <div class="ad-content">
-           <img src="add.jpeg" alt="Special Offer" class="ad-image" width=1300px height=300px>
+           <img src="add.jpeg" alt="Special Offer" class="ad-image"  width=400px height=350px >
           
         
 
