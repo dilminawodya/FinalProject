@@ -67,9 +67,9 @@ $conn->close();
 <body>
     
 <div class="container">
-    <img src="logoo.png" alt=""width=120px height=120px>
-    <h2>Welcome to Funix</h2>
-    <p class="description">Funix is your ultimate platform for music and video streaming. Enjoy access to curated playlists, on-demand videos, and your personal favorites. Login to explore or register to join our growing community!</p>
+    <img src="logoo.png" alt=""width=150px height=150px>
+    <h2>Welcome to Funix</h2><br>
+   
     <?= $message ?>
     <form action="login.php" method="POST">
         <label for="type">Login as:</label>

@@ -110,19 +110,96 @@ footer {
   }
   
 
-  
-/* Form Styling */
-form {
+
+/* Search Form Styling */
+.search-form {
     display: flex;
-    flex-direction: column;
-    gap: 15px;
+    justify-content: center;
+    gap: 10px;
     background: #1c1224;
-    padding: 20px;
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    margin: 0 auto 40px;
 }
 
-form input, form button {
+.search-form .form-control {
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    flex: 1;
+}
+
+.search-form .btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.search-form .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Suggestions Dropdown */
+.suggestions {
+    margin-top: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 10px;
-    font-size: 60;
+    border-radius: 8px;
+}
+
+.suggestions p {
+    margin: 0;
+}
+
+/* Search Results Styling */
+.search-results {
+    list-style-type: none;
+    padding: 0;
+}
+
+.result-item {
+    background: #f1f1f1;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.result-item:hover {
+    background-color: #e0e0e0;
+}
+
+.result-item strong {
+    color: #007bff;
+}
+
+/* Recent Searches Styling */
+.recent-searches {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.recent-searches li {
+    background: #2b2a2a;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .search-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-control {
+        margin-bottom: 10px;
+    }
 }

@@ -56,9 +56,9 @@ $conn->close();
 </head>
 <body>
 <div class="container">
-<img src="logoo.png" alt=""width=120px height=120px>
+<img src="logoo.png" alt=""width=150px height=150px>
     <h2>Welcome to Funix</h2>
-    <p class="description">Join Funix today! Create your account to explore a world of music and video streaming. Whether you're a user or admin, registering is simple and quick. Let's get started!</p>
+ 
     <?= $message ?>
     <form action="register.php" method="POST">
         <label for="type">Register as:</label>

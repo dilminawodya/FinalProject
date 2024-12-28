@@ -110,75 +110,120 @@ body {
     color: #e0c3f0;
 }
 
-/* Styles for Advertisement Box */
-.advertisement-box {
-    display: none; /* Initially hidden */
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 90%;
-    max-width: 400px;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border: 2px solid #fff; /* White border */
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
-    text-align: center;
-    flex-direction: column;
-    align-items: center;
-}
 
-/* Advertisement Content Styles */
-.ad-content h3 {
-    margin: 0;
-    font-size: 1.8em;
-    color: #333;
-}
 
-.ad-content p {
-    margin: 15px 0;
-    color: #555;
-    font-size: 1em;
-}
 
-.ad-content button {
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-}
+    .advertisement-box {
+        display: none; /* Initially hidden */
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        padding: 15px;
+        max-width: 400px;
+        z-index: 1000;
+        transition: opacity 0.3s ease;
+    }
 
-.ad-content button:hover {
-    background-color: #0056b3;
-}
+    .ad-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-/* Cards for Popular, New Releases, and Top Hits */
+    .ad-image {
+        width: 100px;
+        height: 100px;
+        border-radius: 10px;
+        object-fit: cover;
+    }
+
+    .ad-text {
+        flex: 1;
+        margin-left: 15px;
+    }
+
+    .ad-heading {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+
+    .ad-description {
+        font-size: 14px;
+        margin-bottom: 15px;
+        opacity: 0.85;
+    }
+
+    .btn-warning {
+        background-color: #9b79eb;
+        border: none;
+        padding: 8px 15px;
+        font-size: 14px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-warning:hover {
+        background-color: #6967be;
+    }
+
+/* Modern Card Design */
 .card {
-    background-color: #4b474d;
-    color: white;
-    border-radius: 10px;
+    background: linear-gradient(145deg, #53446e, #343446);
+    color: #ffffff;
+    border-radius: 15px;
     text-align: center;
-    margin: 10px;
-    padding: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    width: 180px; /* Set the desired width */
-    height: 250px; /* Set the desired height */
-    overflow: hidden; /* Ensure content doesn't overflow */
+    margin: 15px auto;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    width: 260px; /* Increased width for better spacing */
+    height: 300px; /* Slightly taller for improved content spacing */
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
 }
 
 .card-img-top {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
 }
 
-.card h4, .card p {
-    margin: 10px 0;
+.card h5 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 15px 0 10px;
+    color: #e0e0e0;
+}
+
+.card-body {
+    position: relative;
+}
+
+.btn-primary {
+    background-color: #6c63ff;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #5753c9;
+    transform: scale(1.05);
 }
 
 .play-btn {
@@ -186,56 +231,71 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #e0c3f0;
+    background-color: rgba(108, 99, 255, 0.8);
     border-radius: 50%;
-    padding: 10px;
+    padding: 15px;
     display: none;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .card:hover .play-btn {
     display: block;
+    transform: translate(-50%, -50%) scale(1.1);
 }
 
-/* Footer */
+.play-btn:hover {
+    background-color: rgba(108, 99, 255, 1);
+}
+
+.container h4 {
+    font-weight: 700;
+    font-size: 22px;
+    color: #e6e6e6;
+    margin-bottom: 20px;
+}
 footer {
-    background-color: #1c1224;
-    padding: 20px 0;
-    color: white;
-}
-
-footer h5 {
-    font-size: 1.2rem;
-    color: #e0c3f0;
-    margin-bottom: 10px;
-}
-
-footer ul {
-    list-style: none;
-    padding: 0;
-}
-
-footer ul li {
-    margin: 5px 0;
-}
-
-footer ul a {
-    color: white;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  
+  footer h6 {
+    font-size: 1.1rem;
+    text-transform: uppercase;
+  }
+  
+  footer a {
+    color: #ff6f61;
     text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #ff9f85;
+    text-decoration: underline;
+  }
+  
+  footer .text-reset:hover {
+    color: #ff9f85;
+  }
+  
+  footer .fab {
+    font-size: 1.2rem;
+    margin-right: 8px;
     transition: color 0.3s;
-}
-
-footer ul a:hover {
-    color: #e0c3f0;
-}
-
-footer .social-icons a {
-    color: white;
+  }
+  
+  footer .fab:hover {
+    color: #ff6f61;
+  }
+  
+  footer .fa-map-marker-alt,
+  footer .fa-envelope,
+  footer .fa-phone,
+  footer .fa-headset {
     margin-right: 10px;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-}
+    color: #ff6f61;
+  }
+  
 
-footer .social-icons a:hover {
-    color: #e0c3f0;
-}
+  
