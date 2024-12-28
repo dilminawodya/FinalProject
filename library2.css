@@ -3,9 +3,11 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #2b193d; /* Dark Purple */
     color: white;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
+
 
 /* Navigation Bar */
 .navbar {
@@ -46,47 +48,45 @@ body {
     color: #e0c3f0; /* Light Purple */
 }
 
-/* Header */
-header {
-    background-color: #3a3053;
-    padding: 20px;
-    color: #e0c3f0; /* Light Purple */
-    text-align: center;
-    border-bottom: 2px solid #e0c3f0;
-}
 
-header h1 {
-    font-size: 2.5rem;
+
+/* Navigation Menu Styling */
+.nav-menu {
+    list-style-type: none;
     margin: 0;
+    padding: 0;
+    display: inline-flex; /* Align items horizontally */
+    gap: 15px; /* Space between buttons */
 }
 
-header p {
-    font-size: 1rem;
-    margin-top: 10px;
+.nav-menu li {
+    display: inline;
 }
 
-/* Playlist Section */
-.card {
-    background-color: #1c1224;
-    border: none;
-    transition: transform 0.3s ease;
+/* Button Style */
+.btn-menu {
+    display: inline-block;
+    background-color: #3a3053; /* Button Background Color */
+    color: #ffffff; /* White text */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Font size */
+    padding: 10px 100px; /* Increase horizontal padding for longer buttons */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s;
+    text-align: center; /* Ensure the text is centered */
 }
 
-.card:hover {
-    transform: scale(1.05);
+/* Fixed Width Option (Alternative) */
+.btn-menu {
+    width: 150px; /* Set a specific width for all buttons */
+    text-align: center; /* Center text inside the button */
 }
 
-.card-title {
-    font-size: 1.2rem;
-    color: #e0c3f0;
-}
-
-.card-text {
-    color: #d4c4e2; /* Light Grayish Purple */
-}
-
-.text-muted {
-    font-size: 0.9rem;
+/* Hover Effects */
+.btn-menu:hover {
+    background-color: #e0c3f0; /* Light Purple on Hover */
+    color: #1c1224; /* Dark text on hover */
+    transform: scale(1.05); /* Slightly enlarge */
 }
 
 
@@ -132,8 +132,27 @@ footer {
     color: #ff6f61;
   }
   
-
   
+/* Header */
+header {
+    background-color: #3a3053;
+    padding: 20px;
+    color: #e0c3f0; /* Light Purple */
+    text-align: center;
+    border-bottom: 2px solid #e0c3f0;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+header p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+
 /* Menu Container */
 .menu-container {
     background-color: #1c1224; /* Matches Navbar Background */
@@ -181,3 +200,41 @@ footer {
 }
 
 
+
+  
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(156, 165, 245, 0.3);
+  }
+  
+  .card-img-top {
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid #333;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .btn-outline-light {
+    border-radius: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-outline-light:hover {
+    background-color: #9d9cf5;
+    color: #121212;
+  }
+  
+  h2 {
+    font-weight: bold;
+    border-bottom: 2px solid #faf6f4; /* Accent color for section headers */
+    display: inline-block;
+  }
+  

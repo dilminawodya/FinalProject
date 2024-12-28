@@ -57,102 +57,100 @@ $recent_searches = mysqli_query($conn, "SELECT * FROM search ORDER BY timestamp 
         </div>
     </nav>
 
-    <header class="text-center py-4">
-    <h1>Search for Music & Videos</h1>
-</header>
+    
 
 <main class="container my-5">
-    <h2>Search for Media</h2>
-
-    <!-- Search Form -->
-    <form method="POST" class="search-form">
-        <div class="input-group">
-            <input type="text" id="search_query" name="search_query" placeholder="Search for songs, artists, etc." autocomplete="off" class="form-control">
-            <button type="submit" class="btn btn-primary">Search</button>
+    <!-- Search Form Card -->
+    <div class="card search-card mx-auto">
+        <div class="card-header text-center">
+            <h3>Search for Music & video</h3>
         </div>
-    </form>
-
-    <!-- Suggestions Dropdown -->
-    <div id="suggestions" class="suggestions"></div>
-
-    <?php if (isset($search_results)): ?>
-        <h2>Search Results</h2>
-        <?php if (mysqli_num_rows($search_results) > 0): ?>
-            <ul class="search-results">
-                <?php while ($row = mysqli_fetch_assoc($search_results)): ?>
-                    <li class="result-item">
-                        <strong><?= $row['title'] ?></strong> by <?= $row['artist'] ?>
-                    </li>
-                <?php endwhile; ?>
-            </ul>
-        <?php else: ?>
-            <p>No results found.</p>
-        <?php endif; ?>
-    <?php endif; ?>
-
-    <h2>Recent Searches</h2>
-    <ul class="recent-searches">
-        <?php while ($row = mysqli_fetch_assoc($recent_searches)): ?>
-            <li><?= $row['query'] ?> (<?= $row['timestamp'] ?>)</li>
-        <?php endwhile; ?>
-    </ul>
+        <div class="card-body">
+            <form method="POST" class="search-form">
+                <div class="input-group">
+                    <input type="text" id="search_query" name="search_query" placeholder="Search for songs, artists, etc." autocomplete="off" class="form-control">
+                    <button type="submit" class="btn btn-secondary">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </main>
+
+
+  <!-- Suggestions Dropdown -->
+
+
+<?php if (isset($search_results)): ?>
+    <h2 class="section-header">Search Results</h2>
+    <?php if (mysqli_num_rows($search_results) > 0): ?>
+        <ul class="search-results">
+            <?php while ($row = mysqli_fetch_assoc($search_results)): ?>
+                <li class="result-item">
+                    <div class="result-title"><?= $row['title'] ?></div>
+                    <div class="result-artist">by <?= $row['artist'] ?></div>
+                </li>
+            <?php endwhile; ?>
+        </ul>
+    <?php else: ?>
+        <p class="no-results">No results found. Try a different query!</p>
+    <?php endif; ?>
+<?php endif; ?>
+
+<h2 class="section-header">Recent Searches</h2>
+<ul class="recent-searches">
+    <?php while ($row = mysqli_fetch_assoc($recent_searches)): ?>
+        <li class="recent-item">
+            <?= $row['query'] ?> <span class="timestamp">(<?= $row['timestamp'] ?>)</span>
+        </li>
+    <?php endwhile; ?>
+</ul>
+
 
 <div class="container my-5">
         <h4 class="text-light">Recommended for you</h4>
         <div class="row">
         
-                <div class="col-md-2">
-                    <div class="card">
-                        <img src="OIP.jpg" class="card-img-top" alt="Song ">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Ananthen aa tharu kumara </h5>
-                            
-                            <a href="Ananthayen Aa Tharu Kumara Song.mp4" class="btn btn-primary">Play</a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="card"  >
                         <img src="song2.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Becky G-  Bella Ciao</h5>
                             
-                            <a href="Becky_G_-_Bella_Ciao_Official_Video.mp4" class="btn btn-primary">Play</a>
+                            <a href="Becky_G_-_Bella_Ciao_Official_Video.mp4" class="btn btn-secondary">Play</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="card">
                         <img src="song11.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">cover dance.mp4</h5>
                             
-                            <a href="C:\xampp\htdocs\FinalProject\cover.mp4" class="btn btn-primary">Play</a>
+                            <a href="C:\xampp\htdocs\FinalProject\cover.mp4" class="btn btn-secondary">Play</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="card">
                         <img src="song10.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Noziya Karomatullo  </h5>
                             
-                            <a href="C:\xampp\htdocs\FinalProject\NOZIYA KAROMATULLO - MAYDA-MAYDA (CONCERT 'GIRYAI JON').mp4" class="btn btn-primary">Play</a>
+                            <a href="C:\xampp\htdocs\FinalProject\NOZIYA KAROMATULLO - MAYDA-MAYDA (CONCERT 'GIRYAI JON').mp4" class="btn btn-secondary">Play</a>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-3">
                     <div class="card">
                         <img src="song4.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
                             <h5 class="card-title">Dreamers offical.mp3</h5>
                             
-                            <a href="C:\xampp\htdocs\FinalProject\Dreamers.mp3" class="btn btn-primary">Play</a>
+                            <a href="C:\xampp\htdocs\FinalProject\Dreamers.mp3" class="btn btn-secondary">Play</a>
                         </div>
                     </div>
                 </div>
