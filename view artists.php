@@ -6,12 +6,14 @@
     <title>Music</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="view playlist.css"> 
+    <link rel="stylesheet" href="view-playlists.css"> 
     
 </head>
 <body>
-<div class="container my-5">
-        <h4 class="text-light">View Artists</h4><br>
+
+
+        <div class="container py-5">
+        <h4 class="section-title text-center mb-5">View Artists</h4>
 
       
         <div class="row">
@@ -85,8 +87,20 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="song2.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Becky_G_-_Bella_Ciao_Official_Video </h5>
+                            
+                            <a href="Becky G-Bella Ciao Official Video[GetVideo.watch].mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
             
-        </div><br><br>
+        </div><br><br><br>
 
         
 
@@ -159,8 +173,19 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="OIP.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ananthayen Aa Tharu Kumara Song.mp4 </h5>
+                            
+                            <a href="Ananthayen Aa Tharu Kumara Song.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
             
-        </div><br><br>
+        </div><br><br><br>
 
         
 
@@ -233,8 +258,19 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="song16.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">BNS - Ai Kale Adare.mp4 </h5>
+                            
+                            <a href="C:\xampp\htdocs\FinalProject\BNS - Ai Kale Adare.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
             
-        </div><br><br>
+        </div><br><br><br>
 
 
         <div class="row">
@@ -306,6 +342,18 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="song11.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">cover.mp4" </h5>
+                            
+                            <a href="C:\xampp\htdocs\FinalProject\cover.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
         </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

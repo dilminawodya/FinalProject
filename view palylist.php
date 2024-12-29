@@ -1,44 +1,35 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music</title>
+    <title>Music Playlist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="view playlist.css"> 
-    
+    <link rel="stylesheet" href="view-playlists.css">
 </head>
 <body>
-<div class="container my-5">
-        <h4 class="text-light">View Playlists</h4><br>
+    <div class="container py-5">
+        <h4 class="section-title text-center mb-5">View Playlists</h4>
 
-        <h5>Chill Vibes</h5>
-        <div class="row">
-         
-                <div class="col-md-2">
-                    <div class="card">
-                        <img src="song5.jpg" class="card-img-top" alt="Song ">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Arash - One day ft Helena </h5>
-                        
-                            <a href="Arash - One day ft Helena.mp3" class="btn btn-primary">Play</a>
-                        </div>
+        <!-- Chill Vibes -->
+        <h5 class="playlist-title">Chill Vibes</h5>
+        <div class="row gy-4">
+            <!-- Card Template -->
+            <div class="col-md-2">
+                <div class="card">
+                    <img src="song5.jpg" class="card-img-top" alt="Arash - One day ft Helena">
+                    <div class="card-body">
+                        <h5 class="card-title">Arash - One day ft Helena</h5>
+                        <a href="Arash - One day ft Helena.mp3" class="btn btn-primary">Play</a>
                     </div>
                 </div>
-
-                <div class="col-md-2">
-                    <div class="card">
-                        <img src="song2.jpg" class="card-img-top" alt="Song ">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Becky_G_-_Bella_Ciao_Official_Video </h5>
-                            
-                            <a href="Becky_G_-_Bella_Ciao_Official_Video.mp4" class="btn btn-primary">Play</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-2">
+            </div>
+            
+            <div class="col-md-2">
                     <div class="card">
                         <img src="song6.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
@@ -70,13 +61,25 @@
                         </div>
                     </div>
                 </div>
-            
-        </div><br><br>
 
-        <h5>Workout Beats</h5>
-        <div class="row">
-         
+                
                 <div class="col-md-2">
+                    <div class="card">
+                        <img src="song6.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Dance Pe Chance Full Song  </h5>
+                            
+                            <a href="Dance Pe Chance _ Full Song _ Rab Ne Bana Di Jodi _ Shah Rukh Khan_ Anushka _ Sunidhi_ Labh Janjua_640x360.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+
+        </div><br><br>
+        <h5 class="playlist-title">Workout Beats</h5>
+        <div class="row gy-4">
+            <!-- Card Template -->
+            <div class="col-md-2">
                     <div class="card">
                         <img src="song11.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
@@ -133,10 +136,9 @@
             
         </div><br><br>
 
-        <h5>Romantic Hits</h5>
-        <div class="row">
-         
-                <div class="col-md-2">
+        <h5 class="playlist-title">Romantic Hits</h5>
+        <div class="row gy-4">
+        <div class="col-md-2">
                     <div class="card">
                         <img src="song5.jpg" class="card-img-top" alt="Song ">
                         <div class="card-body text-center">
@@ -193,9 +195,9 @@
             
         </div><br><br>
 
-        <h5>Party Playlist</h5>
-        <div class="row">
-         
+        <h5 class="playlist-title">Party Playlist</h5>
+        <div class="row gy-4">
+
         <div class="col-md-2">
                     <div class="card">
                         <img src="song5.jpg" class="card-img-top" alt="Song ">
@@ -250,8 +252,26 @@
                         </div>
                     </div>
                 </div>
-        </div>
+        
+
+
+
+        
+
+        
+
+
+
+
+
+
+
+ </div>
     </div>
+
+
+</div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

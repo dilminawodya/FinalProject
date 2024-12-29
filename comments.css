@@ -1,18 +1,30 @@
-/* General Styles */
+/* General Styles with Background Image */
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif; /* Modern and sleek font */
-    background-color: #1b1b2f; /* Deep blue-gray background */
+    font-family: 'Roboto', sans-serif;
+    background: url('back.jpg') no-repeat center center fixed; /* Replace 'your-background-image.jpg' with the actual path */
+    background-size: cover; /* Ensures the image covers the entire background */
     color: #e0e0e0;
     line-height: 1.6;
 }
+
+/* Overlay Effect for Readability */
+.comment-section, .comments {
+    background: rgba(46, 46, 79, 0.85); /* Dark overlay with slight transparency */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 800px;
+}
+
 
 /* Comment Section Styling */
 .comment-section {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background: linear-gradient(145deg, #23234a, #2b2b5a); /* Modern gradient */
+    background: linear-gradient(145deg, #b5b5e6, #522b5a); /* Modern gradient */
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -74,7 +86,7 @@ form {
 }
 
 .form-button:hover {
-    background-color: #5938b8;
+    background-color: #6c6a70;
     transform: scale(1.05);
 }
 
@@ -83,7 +95,7 @@ form {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background: linear-gradient(145deg, #23234a, #2b2b5a); /* Matching gradient */
+    background: linear-gradient(145deg, #babadd, #4f2b5a); /* Matching gradient */
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }

@@ -10,8 +10,10 @@
     
 </head>
 <body>
-<div class="container my-5">
-        <h4 class="text-light">View Albums</h4><br>
+
+
+        <div class="container py-5">
+        <h4 class="section-title text-center mb-5">View Albums</h4>
 
       
         <div class="row">
@@ -19,7 +21,7 @@
         <h5>30 - Adele</h5>
         <div class="row align-items-center mb-4">
             <div class="col-md-3">
-                <img src="al1.jpg" alt="Adele" class="img-fluid rounded">
+                <img src="al1.jpg" alt="Adele" class="img-fluid rounded" width=250px height=250px>
             </div>
             <div class="col-md-9">
                 <p class="text-light">
@@ -84,8 +86,19 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="song2.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Becky_G_-_Bella_Ciao_Official_Video </h5>
+                            
+                            <a href="Becky_G_-_Bella_Ciao_Official_Video.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
             
-        </div><br><br>
+        </div><br><br><br>
 
         
 
@@ -94,7 +107,7 @@
         <h5>Scorpion - Drake</h5>
         <div class="row align-items-center mb-4">
             <div class="col-md-3">
-                <img src="al2.jpg" alt="Adele" class="img-fluid rounded">
+                <img src="al2.jpg" alt="Adele" class="img-fluid rounded" width=150px height=150px>
             </div>
             <div class="col-md-9">
                 <p class="text-light">
@@ -158,8 +171,19 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="song2.jpg" class="card-img-top" alt="Song " >
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Becky_G_-_Bella_Ciao_Official_Video </h5>
+                            
+                            <a href="Becky_G_-_Bella_Ciao_Official_Video.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
             
-        </div><br><br>
+        </div><br><br><br>
 
         
 
@@ -168,7 +192,7 @@
         <h5>Map of the Soul:7 - BTS</h5>
         <div class="row align-items-center mb-4">
             <div class="col-md-3">
-                <img src="al3.jpg" alt="Adele" class="img-fluid rounded">
+                <img src="al3.jpg" alt="Adele" class="img-fluid rounded" width=350px height=350px>
             </div>
             <div class="col-md-9">
                 <p class="text-light">
@@ -229,6 +253,18 @@
                             <h5 class="card-title">Ananthayen Aa Tharu Kumara Song.mp4 </h5>
                             
                             <a href="Ananthayen Aa Tharu Kumara Song.mp4" class="btn btn-primary">Play</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="col-md-2">
+                    <div class="card">
+                        <img src="song11.jpg" class="card-img-top" alt="Song ">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">cover.mp4</h5>
+                        
+                            <a href="C:\xampp\htdocs\FinalProject\cover.mp4" class="btn btn-primary">Play</a>
                         </div>
                     </div>
                 </div>

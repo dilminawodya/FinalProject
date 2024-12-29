@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post Comment</title>
-    <link rel="stylesheet" href="comment.css">
+    <link rel="stylesheet" href="comments.css">
 </head>
 <body>
     <div class="comment-section">

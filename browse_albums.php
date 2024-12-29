@@ -14,12 +14,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
             VALUES ('$title', '$artist_id', '$release_date', '$description')";
 
     if (mysqli_query($conn, $sql)) {
-        echo "<script>alert('Album added successfully!');</script>";
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Album added successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>";
     } else {
-        echo "<script>alert('Error: Could not add the album.');</script>";
+        echo "<script>
+            document.addEventListener('DOMContentLoaded', function() {
+                Swal.fire({
+                    title: 'Error!',
+                    text: 'Could not add the album. Please try again.',
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                });
+            });
+        </script>";
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="albums.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 </head>
 <body>
@@ -93,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
             ?>
         </div>
     </section>
-    <a href="view_album.php" class="btn btn-secondary">View Albums</a>
+    <a href="view album.php" class="btn btn-secondary">View Albums</a>
 </main>
 
 <!-- Add New Album Form -->
