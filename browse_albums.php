@@ -30,6 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="albums.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
       <!-- Navigation Bar -->
@@ -45,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                     <li class="nav-item"><a class="nav-link" href="search.php">Search</a></li>
                     <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
                     <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
-                    <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="packagess.php">Payment</a></li>
                     <a href="login.php" class="btn btn-secondary m-2">Login</a>
                     <a href="register.php" class="btn btn-secondary m-2">Register</a>
                 </ul>
@@ -60,39 +62,42 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
     </header>
 
     <main class="container mt-4">
-        <!-- Display Albums -->
-        <section class="album-list">
-            <h2 class="section-title">Available Albums</h2>
-            <div class="row">
-                <?php
-                $result = mysqli_query($conn, "
-                    SELECT albums.*, artists.name AS artist_name 
-                    FROM albums 
-                    LEFT JOIN artists ON albums.artist_id = artists.artist_id
-                ");
-                if (mysqli_num_rows($result) > 0) {
-                    while ($album = mysqli_fetch_assoc($result)) {
-                        echo "
-                            <div class='col-md-4'>
-                                <div class='album-card'>
-                                    <h3 class='album-title'>" . htmlspecialchars($album['title']) . "</h3>
-                                    <p><strong>Artist:</strong> " . htmlspecialchars($album['artist_name']) . "</p>
-                                    <p><strong>Release Date:</strong> " . htmlspecialchars($album['release_date']) . "</p>
-                                    <p><strong>Description:</strong> " . htmlspecialchars($album['description']) . "</p>
-                                </div>
+    <!-- Display Albums -->
+    <section class="album-list">
+        <h2 class="section-title">Available Albums</h2>
+        <div class="row">
+            <?php
+            $result = mysqli_query($conn, "
+                SELECT albums.*, artists.name AS artist_name 
+                FROM albums 
+                LEFT JOIN artists ON albums.artist_id = artists.artist_id
+            ");
+            if (mysqli_num_rows($result) > 0) {
+                while ($album = mysqli_fetch_assoc($result)) {
+                    $image_url = htmlspecialchars($album['image_url'] ?? 'ab.jpg'); // Use default image if none is provided
+                    echo "
+                        <div class='col-md-4'>
+                            <div class='album-card'>
+                                <img src='$image_url' alt='Album Cover' class='album-image'>
+                                <h3 class='album-title'>" . htmlspecialchars($album['title']) . "</h3>
+                                <p><strong>Artist:</strong> " . htmlspecialchars($album['artist_name']) . "</p>
+                                <p><strong>Release Date:</strong> " . htmlspecialchars($album['release_date']) . "</p>
+                                <p><strong>Description:</strong> " . htmlspecialchars($album['description']) . "</p>
                             </div>
-                        ";
-                    }
-                } else {
-                    echo "<p>No albums found.</p>";
+                        </div>
+                    ";
                 }
-                ?>
-            </div>
-        </section>
-        <a href="view album.php" class="btn btn-secondary">View Albums</a>
+            } else {
+                echo "<p>No albums found.</p>";
+            }
+            ?>
+        </div>
+    </section>
+    <a href="view_album.php" class="btn btn-secondary">View Albums</a>
+</main>
 
-        <!-- Add New Album Form -->
-        <section class="add-album mt-5">
+<!-- Add New Album Form -->
+<section class="add-album mt-5">
             
             <form action="browse_albums.php" method="POST">
             <h2 class="section-title">Add New Album</h2>
@@ -121,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['submit'])) {
                 </div>
             </form>
         </section>
-    </main>
+    </main>  
 <br>
     
 

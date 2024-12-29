@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Funix - Playlist</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="bowser-paylist.css">
+    <title>FUNIX Packages</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="package.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-       <!-- Navigation Bar -->
-       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-        <img src="logoo.png" alt="Funix Logo" class="about-logo" width=70px height=70px>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <a class="navbar-brand" href="#">
+                <img src="logoo.png" alt="Funix Logo" width="70" height="70" class="d-inline-block align-text-top">
+              
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -23,7 +25,7 @@
                     <li class="nav-item"><a class="nav-link" href="search.php">Search</a></li>
                     <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
                     <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
-                    <li class="nav-item"><a class="nav-link" href="packagess.php">Payment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
                     <a href="login.php" class="btn btn-secondary m-2">Login</a>
                     <a href="register.php" class="btn btn-secondary m-2">Register</a>
                 </ul>
@@ -31,52 +33,59 @@
         </div>
     </nav>
 
-    </nav>
-    <div class="menu-container">
-    <ul class="nav-menu">
-        <li><a href="library.php" class="btn-menu">Catalogue</a></li>
-        <li><a href="browse_playlists.php" class="btn-menu">Playlist</a></li>
-        <li><a href="browse_artists.php" class="btn-menu">Artists</a></li>
-    </ul>
-</div>
-
-
-
-    <!-- Page Header -->
-    <header class="text-center py-4">
-        <h1>Playlists</h1>
-        <p>Explore a variety of playlists curated by our users and admins</p>
+    <!-- Header Section -->
+    <header class="packages-header text-center py-4">
+        <h1>Choose Your Plan</h1>
+        <p>Find the package that fits your needs and enjoy premium content.</p>
     </header>
 
-    <!-- Playlist Section -->
-    <main class="container my-4">
-        <div class="row">
-            <?php
-            include 'db_connect.php';
-            $result = mysqli_query($conn, "SELECT * FROM playlists");
-            while ($playlist = mysqli_fetch_assoc($result)) {
-                echo "<div class='col-md-4 mb-4'>";
-                echo "<div class='card bg-dark text-white'>";
-                echo "<div class='card-body'>";
-                echo "<h5 class='card-title'>" . htmlspecialchars($playlist['name']) . "</h5>";
-                echo "<p class='card-text'>" . htmlspecialchars($playlist['description']) . "</p>";
-                echo "<p class='text-muted'>Created By: " . htmlspecialchars($playlist['created_by']) . "</p>";
-                echo "</div>";
-                echo "</div>";
-                echo "</div>";
-            }
+    <!-- Modern Ad Section -->
+<section class="ad-content text-center">
+    <div class="ad-container">
+        <img src="musicc.jpg" alt="Special Offer" class="ad-image">
+        <div class="ad-text">
+            <h2>🔥 Special Offer on Funix Premium!</h2>
+            <p>Enjoy <strong>30% off</strong> on our Premium Subscription. Stream ad-free music and videos now! 🎶✨ Limited time offer.</p>
             
-            ?>
-             <a href="view palylist.php" class="btn btn-secondary">View Plylists</a>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Packages Section -->
+    <main class="packages container my-5">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="package-card text-center p-4 bg-dark text-light rounded">
+                    <h2>Individual</h2>
+                    <p>Perfect for single users.</p>
+                    <p><strong>$9.99/month</strong></p>
+                    <button onclick="window.location.href='bowser_payment.php'" class="btn btn-secondary">Pay Now</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="package-card text-center p-4 bg-dark text-light rounded">
+                    <h2>Student</h2>
+                    <p>Exclusive discounts for students.</p>
+                    <p><strong>$4.99/month</strong></p>
+                    <button onclick="window.location.href='bowser_payment.php'"class="btn btn-secondary">Pay Now</button>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="package-card text-center p-4 bg-dark text-light rounded">
+                    <h2>Family</h2>
+                    <p>Share with up to 5 family members.</p>
+                    <p><strong>$14.99/month</strong></p>
+                    <button onclick="window.location.href='bowser_payment.php'" class="btn btn-secondary">Pay Now</button>
+                </div>
+            </div>
         </div>
     </main>
 
     
 
-
-
   <!-- Footer -->
-  <footer class="text-center text-lg-start bg-dark text-white">
+<footer class="text-center text-lg-start bg-dark text-white">
   <!-- Section: Social media -->
   <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
     <!-- Left -->
@@ -180,5 +189,12 @@
   </div>
   <!-- Copyright -->
 </footer>
+
+
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -103,17 +103,19 @@ header p {
     color: #d1b3e0; /* Subtle Light Purple */
     margin: 5px 0;
 }
-
 /* Form Styling */
 .add-album form {
     background-color: #1c1224; /* Dark Shade */
-    padding: 20px;
+    padding: 15px; /* Reduce padding */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 1200px; /* Restrict the form width */
+    margin: 0 auto; /* Center the form */
 }
 
 .add-album .form-label {
     color: #e0c3f0; /* Light Purple */
+    font-size: 0.9rem; /* Slightly smaller font size */
 }
 
 .add-album .form-control {
@@ -121,8 +123,9 @@ header p {
     color: white;
     border: none;
     border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 15px;
+    padding: 8px; /* Compact padding */
+    margin-bottom: 10px; /* Reduce margin */
+    font-size: 0.9rem; /* Adjust font size */
 }
 
 .add-album .form-control:focus {
@@ -134,10 +137,10 @@ header p {
 .add-album button {
     background-color: #e0c3f0;
     color: #1c1224;
-    padding: 10px 20px;
+    padding: 8px 15px; /* Reduce button size */
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
+    font-size: 0.9rem; /* Adjust font size */
     cursor: pointer;
     transition: background-color 0.3s;
 }

@@ -49,7 +49,7 @@ $recent_searches = mysqli_query($conn, "SELECT * FROM search ORDER BY timestamp 
                     <li class="nav-item"><a class="nav-link" href="search.php">Search</a></li>
                     <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
                     <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
-                    <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="packagess.php">Payment</a></li>
                     <a href="login.php" class="btn btn-secondary m-2">Login</a>
                     <a href="register.php" class="btn btn-secondary m-2">Register</a>
                 </ul>

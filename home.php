@@ -31,7 +31,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
                     <li class="nav-item"><a class="nav-link" href="search.php">Search</a></li>
                     <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
                     <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
-                    <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="packagess.php">Payment</a></li>
                     <a href="login.php" class="btn btn-secondary m-2">Login</a>
                     <a href="register.php" class="btn btn-secondary m-2">Register</a>
                 </ul>
