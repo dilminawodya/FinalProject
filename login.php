@@ -59,31 +59,31 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 $conn->close();
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="login.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Funix | Login</title>
+    <link rel="stylesheet" href="logiin.css">
 </head>
 <body>
-    
 <div class="container">
-    <img src="logoo.png" alt=""width=150px height=150px>
-    <h2>Welcome to Funix</h2><br>
-   
+    <img src="logoo.png" alt="Funix Logo" width="150px" height="150px">
+    <h2>Welcome to Funix</h2>
     <?= $message ?>
     <form action="login.php" method="POST">
         <label for="type">Login as:</label>
-        <select name="type" required>
+        <select name="type" id="type" required>
             <option value="user">User</option>
             <option value="admin">Admin</option>
         </select>
         <label for="email_or_username">Email (User) / Username (Admin):</label>
-        <input type="text" name="email_or_username" required>
+        <input type="text" name="email_or_username" id="email_or_username" required>
         <label for="password">Password:</label>
-        <input type="password" name="password" required>
+        <input type="password" name="password" id="password" required>
         <button type="submit">Login</button>
     </form>
-    <a href="register.php" class="register-link">Don't have an account? Register now!</a>
+    <a href="register.php" class="login-link">Don't have an account? Register now!</a>
 </div>
 </body>
 </html>

@@ -56,6 +56,8 @@ $result = mysqli_query($conn, "SELECT * FROM artists");
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Artists</title>
     <link rel="stylesheet" href="admin-artist.css">
+    <!-- Add Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
 <div class="main">
@@ -79,10 +81,15 @@ $result = mysqli_query($conn, "SELECT * FROM artists");
         <input type="text" name="genre" id="genre" placeholder="Genre" required><br>
         <label for="description">Description:</label><br>
         <textarea name="description" id="description" placeholder="Add a brief description"></textarea><br>
-        <button type="submit" name="add_artist" class="btn">Add Artist</button>
-        <button type="submit" name="update_artist" class="btn">Update Artist</button>
+        <button type="submit" name="add_artist" class="btn">
+            <i class="fa fa-plus"></i> Add Artist
+        </button>
+        <button type="submit" name="update_artist" class="btn">
+            <i class="fa fa-edit"></i> Update Artist
+        </button>
     </form>
-    <a href="admin_dashboard.php" class="btn">Back to Dashboard</a>
+    
+    <a href="admin_dashboard.php" class="logout-btn"><i class="fas fa-home"></i> Dashboard</a>
 
     <!-- Artist List -->
     <h2>Artist List</h2>
@@ -106,9 +113,13 @@ $result = mysqli_query($conn, "SELECT * FROM artists");
                     <td>
                         <form method="POST" style="display:inline;">
                             <input type="hidden" name="artist_id" value="<?= htmlspecialchars($row['artist_id']) ?>">
-                            <button type="submit" name="delete_artist" class="btn-delete">Delete</button>
+                            <button type="submit" name="delete_artist" class="btn-delete">
+                                <i class="fa fa-trash-alt"></i> Delete
+                            </button>
                         </form>
-                        <button onclick="editArtist(<?= htmlspecialchars(json_encode($row)) ?>)" class="btn-edit">Edit</button>
+                        <button onclick="editArtist(<?= htmlspecialchars(json_encode($row)) ?>)" class="btn-edit">
+                            <i class="fa fa-pencil-alt"></i> Edit
+                        </button>
                     </td>
                 </tr>
             <?php endwhile; ?>
@@ -144,3 +155,4 @@ function editArtist(artist) {
 </script>
 </body>
 </html>
+

@@ -39,70 +39,72 @@ $result = mysqli_query($conn, "
     <meta charset="UTF-8">
     <title>Manage Albums</title>
     <link rel="stylesheet" href="admin-album.css">
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="main">
-    <h1>Manage Albums</h1>
-    <form method="POST">
-        <input type="hidden" name="album_id" id="album_id">
-        <label>Title:</label><br>
-        <input type="text" name="title" id="title" required><br>
-        <label>Artist:</label><br>
-        <select name="artist_id" id="artist_id" required>
-            <option value="">Select Artist</option>
-            <?php
-            $artists = mysqli_query($conn, "SELECT * FROM artists");
-            while ($artist = mysqli_fetch_assoc($artists)) {
-                echo "<option value='" . $artist['artist_id'] . "'>" . $artist['name'] . "</option>";
-            }
-            ?>
-        </select><br>
-        <label>Release Date:</label><br>
-        <input type="date" name="release_date" id="release_date" required><br>
-        <label>Description:</label><br>
-        <textarea name="description" id="description"></textarea><br>
-        <button type="submit" name="add_album">Add Album</button>
-        <button type="submit" name="update_album">Update Album</button>
-    </form>
+    <div class="main">
+        <h1><i class="fas fa-music"></i> Manage Albums</h1>
+        <form method="POST">
+            <input type="hidden" name="album_id" id="album_id">
+            <label>Title:</label><br>
+            <input type="text" name="title" id="title" required><br>
+            <label>Artist:</label><br>
+            <select name="artist_id" id="artist_id" required>
+                <option value="">Select Artist</option>
+                <?php
+                $artists = mysqli_query($conn, "SELECT * FROM artists");
+                while ($artist = mysqli_fetch_assoc($artists)) {
+                    echo "<option value='" . $artist['artist_id'] . "'>" . $artist['name'] . "</option>";
+                }
+                ?>
+            </select><br>
+            <label>Release Date:</label><br>
+            <input type="date" name="release_date" id="release_date" required><br>
+            <label>Description:</label><br>
+            <textarea name="description" id="description"></textarea><br>
+            <button type="submit" name="add_album"><i class="fas fa-plus"></i> Add Album</button>
+            <button type="submit" name="update_album"><i class="fas fa-edit"></i> Update Album</button>
+        </form>
 
-    <a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
-    <h2>Album List</h2>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Title</th>
-            <th>Artist</th>
-            <th>Release Date</th>
-            <th>Description</th>
-            <th>Actions</th>
-        </tr>
-        <?php while ($row = mysqli_fetch_assoc($result)): ?>
+        <a href="admin_dashboard.php" class="logout-btn"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <h2><i class="fas fa-list"></i> Album List</h2>
+        <table>
             <tr>
-                <td><?= $row['album_id'] ?></td>
-                <td><?= $row['title'] ?></td>
-                <td><?= $row['artist_name'] ?></td>
-                <td><?= $row['release_date'] ?></td>
-                <td><?= $row['description'] ?></td>
-                <td>
-                    <form method="POST" style="display:inline;">
-                        <input type="hidden" name="album_id" value="<?= $row['album_id'] ?>">
-                        <button type="submit" name="delete_album">Delete</button>
-                    </form>
-                    <button onclick="editAlbum(<?= htmlspecialchars(json_encode($row)) ?>)">Edit</button>
-                </td>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Release Date</th>
+                <th>Description</th>
+                <th>Actions</th>
             </tr>
-        <?php endwhile; ?>
-    </table>
-</div>
+            <?php while ($row = mysqli_fetch_assoc($result)): ?>
+                <tr>
+                    <td><?= $row['album_id'] ?></td>
+                    <td><?= $row['title'] ?></td>
+                    <td><?= $row['artist_name'] ?></td>
+                    <td><?= $row['release_date'] ?></td>
+                    <td><?= $row['description'] ?></td>
+                    <td>
+                        <form method="POST" style="display:inline;">
+                            <input type="hidden" name="album_id" value="<?= $row['album_id'] ?>">
+                            <button type="submit" name="delete_album"><i class="fas fa-trash"></i> Delete</button>
+                        </form>
+                        <button onclick="editAlbum(<?= htmlspecialchars(json_encode($row)) ?>)"><i class="fas fa-pencil-alt"></i> Edit</button>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
 
-<script>
-function editAlbum(album) {
-    document.getElementById('album_id').value = album.album_id;
-    document.getElementById('title').value = album.title;
-    document.getElementById('artist_id').value = album.artist_id;
-    document.getElementById('release_date').value = album.release_date;
-    document.getElementById('description').value = album.description;
-}
-</script>
+    <script>
+    function editAlbum(album) {
+        document.getElementById('album_id').value = album.album_id;
+        document.getElementById('title').value = album.title;
+        document.getElementById('artist_id').value = album.artist_id;
+        document.getElementById('release_date').value = album.release_date;
+        document.getElementById('description').value = album.description;
+    }
+    </script>
 </body>
 </html>

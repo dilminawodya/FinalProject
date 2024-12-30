@@ -41,6 +41,8 @@ $result = mysqli_query($conn, "SELECT * FROM payment ORDER BY payment_date DESC"
     <meta charset="UTF-8">
     <title>Manage Payments</title>
     <link rel="stylesheet" href="admin-payment.css">
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <div class="main">
@@ -61,10 +63,10 @@ $result = mysqli_query($conn, "SELECT * FROM payment ORDER BY payment_date DESC"
         <input type="text" name="payment_method" id="payment_method" required><br>
         <label>Transaction ID:</label><br>
         <input type="text" name="transaction_id" id="transaction_id"><br>
-        <button type="submit" name="add_payment">Add Payment</button>
-        <button type="submit" name="update_payment">Update Payment</button>
+        <button type="submit" name="add_payment"><i class="fas fa-plus"></i> Add Payment</button>
+        <button type="submit" name="update_payment"><i class="fas fa-edit"></i> Update Payment</button>
     </form>
-    <a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
+    <a href="admin_dashboard.php" class="logout-btn"><i class="fas fa-home"></i> Dashboard</a>
     <h2>Payment List</h2>
     <table>
         <tr>
@@ -87,9 +89,9 @@ $result = mysqli_query($conn, "SELECT * FROM payment ORDER BY payment_date DESC"
                 <td>
                     <form method="POST" style="display:inline;">
                         <input type="hidden" name="payment_id" value="<?= $row['payment_id'] ?>">
-                        <button type="submit" name="delete_payment">Delete</button>
+                        <button type="submit" name="delete_payment"><i class="fas fa-trash-alt"></i> Delete</button>
                     </form>
-                    <button onclick="editPayment(<?= htmlspecialchars(json_encode($row)) ?>)">Edit</button>
+                    <button onclick="editPayment(<?= htmlspecialchars(json_encode($row)) ?>)"><i class="fas fa-edit"></i> Edit</button>
                 </td>
             </tr>
         <?php endwhile; ?>

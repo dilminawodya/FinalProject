@@ -3,7 +3,7 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #290652;
     color: #333;
 }
 
@@ -12,14 +12,14 @@ body {
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
-    background: #fff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background:  #290652;
+    box-shadow: 0 4px 20px rgba(245, 244, 244, 0.1);
     border-radius: 8px;
 }
 
 .main h1 {
     text-align: center;
-    color: #6a1b9a;
+    color: #f3f2f3;
     margin-bottom: 20px;
 }
 
@@ -28,7 +28,7 @@ form {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    background: #f3f3f3;
+    background:  #420574;
     padding: 20px;
     border-radius: 8px;
 }
@@ -81,7 +81,7 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    border: 1px solid #ddd;
+    border: 1px solid #dddddd;
     font-size: 0.9rem;
     text-align: left;
 }

@@ -21,6 +21,8 @@ $result = mysqli_query($conn, "
     <meta charset="UTF-8">
     <title>Manage Search Logs</title>
     <link rel="stylesheet" href="admin-search.css">
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <div class="main">
@@ -41,13 +43,16 @@ $result = mysqli_query($conn, "
                 <td>
                     <form method="POST" style="display:inline;">
                         <input type="hidden" name="log_id" value="<?= $row['search_id'] ?>">  <!-- Updated column name -->
-                        <button type="submit" name="delete_log">Delete</button>
+                        <button type="submit" name="delete_log"><i class="fas fa-trash-alt"></i> Delete</button>
                     </form>
                 </td>
             </tr>
         <?php endwhile; ?>
     </table>
 </div>
-<a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
+
+<!-- Logout Button -->
+<a href="admin_dashboard.php" class="logout-btn"><i class="fas fa-home"></i> Dashboard</a>
+
 </body>
 </html>

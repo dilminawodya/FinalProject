@@ -51,29 +51,38 @@ $conn->close();
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="registeration.css">
     <title>Funix | Register</title>
 </head>
 <body>
 <div class="container">
-<img src="logoo.png" alt=""width=150px height=150px>
-    <h2>Welcome to Funix</h2>
- 
+    <img src="logoo.png" alt="Funix Logo" width="120px" height="120px">
+    <h2>Create Your Account</h2>
     <?= $message ?>
     <form action="register.php" method="POST">
-        <label for="type">Register as:</label>
-        <select name="type" required>
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-        </select>
-        <label for="first_name">First Name :</label>
-        <input type="text" name="first_name">
-        <label for="last_name">Last Name :</label>
-        <input type="text" name="last_name">
-        <label for="email_or_username">Email  / Username :</label>
-        <input type="text" name="email_or_username" required>
-        <label for="password">Password:</label>
-        <input type="password" name="password" required>
+        <div class="form-group">
+            <label for="type">Register as:</label>
+            <select name="type" required>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" name="first_name" placeholder="Enter your first name">
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" name="last_name" placeholder="Enter your last name">
+        </div>
+        <div class="form-group">
+            <label for="email_or_username">Email / Username:</label>
+            <input type="text" name="email_or_username" required placeholder="Enter your email or username">
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" name="password" required placeholder="Enter your password">
+        </div>
         <button type="submit">Register</button>
     </form>
     <a href="login.php" class="login-link">Already have an account? Login now!</a>

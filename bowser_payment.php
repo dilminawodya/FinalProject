@@ -27,14 +27,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_payment'])) {
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Payments</title>
-    <link rel="stylesheet" href="payment.css"> <!-- Add your stylesheet -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="payment.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body onload="showSweetAlert('<?= addslashes($message) ?>')">
 
@@ -45,28 +46,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_payment'])) {
 <div class="add-payment">
     <h1>Add New Payment</h1>
     <form method="POST">
-        <label for="amount">Amount:</label><br>
-        <input type="number" step="0.01" name="amount" id="amount" required><br>
+        <label for="amount">Amount:</label>
+        <input type="number" step="0.01" name="amount" id="amount" required>
 
-        <label for="payment_date">Payment Date:</label><br>
-        <input type="date" name="payment_date" id="payment_date" required><br>
+        <label for="payment_date">Payment Date:</label>
+        <input type="date" name="payment_date" id="payment_date" required>
 
-        <label for="payment_status">Payment Status:</label><br>
+        <label for="payment_status">Payment Status:</label>
         <select name="payment_status" id="payment_status" required>
             <option value="Pending">Pending</option>
             <option value="Completed">Completed</option>
             <option value="Failed">Failed</option>
-        </select><br>
+        </select>
 
-        <label for="payment_method">Payment Method:</label><br>
-        <input type="text" name="payment_method" id="payment_method" placeholder="e.g., Credit Card, PayPal" required><br>
+        <label for="payment_method">Payment Method:</label>
+        <input type="text" name="payment_method" id="payment_method" placeholder="e.g., Credit Card, PayPal" required>
 
-        <label for="transaction_id">Transaction ID:</label><br>
-        <input type="text" name="transaction_id" id="transaction_id" placeholder="e.g., TXN123456"><br>
+        <label for="transaction_id">Transaction ID:</label>
+        <input type="text" name="transaction_id" id="transaction_id" placeholder="e.g., TXN123456">
 
         <button type="submit" name="add_payment">Add Payment</button>
     </form>
-</div><br>
+</div>
 
 <main>
     <section>
@@ -106,7 +107,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_payment'])) {
         <?php endif; ?>
     </section>
 </main>
-
 <script>
     function showSweetAlert(message) {
         if (message) {

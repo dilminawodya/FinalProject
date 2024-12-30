@@ -33,6 +33,8 @@ $result = mysqli_query($conn, "SELECT * FROM playlists");
     <meta charset="UTF-8">
     <title>Manage Playlists</title>
     <link rel="stylesheet" href="admin-playlist.css">
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 <div class="main">
@@ -45,11 +47,11 @@ $result = mysqli_query($conn, "SELECT * FROM playlists");
         <textarea name="description" id="description"></textarea><br>
         <label>Created By:</label><br>
         <input type="text" name="created_by" id="created_by" required><br>
-        <button type="submit" name="add_playlist">Add Playlist</button>
-        <button type="submit" name="update_playlist">Update Playlist</button>
+        <button type="submit" name="add_playlist"><i class="fas fa-plus"></i> Add Playlist</button>
+        <button type="submit" name="update_playlist"><i class="fas fa-sync-alt"></i> Update Playlist</button>
     </form>
 
-    <a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
+    <a href="admin_dashboard.php" class="logout-btn"><i class="fas fa-home"></i> Dashboard</a>
     <h2>Playlist List</h2>
     <table>
         <tr>
@@ -66,11 +68,13 @@ $result = mysqli_query($conn, "SELECT * FROM playlists");
                 <td><?= $row['description'] ?></td>
                 <td><?= $row['created_by'] ?></td>
                 <td>
+                    <!-- Delete Button with Icon -->
                     <form method="POST" style="display:inline;">
                         <input type="hidden" name="playlist_id" value="<?= $row['playlist_id'] ?>">
-                        <button type="submit" name="delete_playlist">Delete</button>
+                        <button type="submit" name="delete_playlist"><i class="fas fa-trash-alt"></i> Delete</button>
                     </form>
-                    <button onclick="editPlaylist(<?= htmlspecialchars(json_encode($row)) ?>)">Edit</button>
+                    <!-- Edit Button with Icon -->
+                    <button onclick="editPlaylist(<?= htmlspecialchars(json_encode($row)) ?>)"><i class="fas fa-edit"></i> Edit</button>
                 </td>
             </tr>
         <?php endwhile; ?>

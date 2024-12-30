@@ -5,11 +5,17 @@ body {
     color: white;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 /* Header */
 header {
+    position: absolute;
+    top: 0;
+    width: 100%;
     background-color: #3a3053; /* Darker Purple */
     padding: 20px;
     color: #e0c3f0; /* Light Purple */
@@ -30,18 +36,19 @@ header p {
 /* Form Section */
 .add-payment {
     background-color: #1c1224;
-    margin: 20px auto;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 15px 20px; /* Reduced padding */
     border-radius: 10px;
-    max-width: 500px;
+    width: 90%; /* Default width */
+    max-width: 400px; /* Maximum width */
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
 }
 
 .add-payment h1 {
     color: #e0c3f0;
-    margin-bottom: 20px;
-    font-size: 1.8rem;
-    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
 }
 
 .add-payment form {
@@ -52,6 +59,7 @@ header p {
 .add-payment label {
     color: #d1b3e0;
     font-weight: bold;
+    text-align: left;
     margin-bottom: 5px;
 }
 
@@ -62,7 +70,7 @@ header p {
     border: 1px solid #e0c3f0;
     border-radius: 5px;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .add-payment button {
