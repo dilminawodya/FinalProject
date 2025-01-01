@@ -38,8 +38,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
             </div>
         </div>
     </nav>
-
-   <!-- Welcome Section -->
+<!-- Welcome Section -->
 <div class="container text-center my-5 py-5" style="background:rgb(80, 80, 80); border-radius: 10px;">
     <div class="row align-items-center">
         <!-- Text Content -->
@@ -54,13 +53,16 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['type'] != 'user') {
                 <a href="library.php" class="btn btn-primary m-2 px-4 py-2">Your Favorites</a>
             </div>
         </div>
-        <!-- Image -->
+        <!-- Video -->
         <div class="col-md-6">
-            <img src="bg.jpg" alt="Streaming" class="img-fluid rounded shadow" style="max-height: 400px; width: 400;height: 400px;">
+            <video class="img-fluid rounded shadow w-100" style="max-height: 400px;" autoplay muted loop>
+                <source src="funix video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
     </div>
 </div>
-</div>
+
 
    
  <!-- Advertisement Box -->

@@ -41,6 +41,8 @@ $result = mysqli_query($conn, "
     <link rel="stylesheet" href="admin-album.css">
     <!-- Font Awesome CDN -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- SweetAlert CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
     <div class="main">
@@ -105,6 +107,29 @@ $result = mysqli_query($conn, "
         document.getElementById('release_date').value = album.release_date;
         document.getElementById('description').value = album.description;
     }
+
+    <?php if (isset($_POST['add_album'])): ?>
+        Swal.fire({
+            title: 'Album Added!',
+            text: 'The album has been successfully added.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    <?php elseif (isset($_POST['update_album'])): ?>
+        Swal.fire({
+            title: 'Album Updated!',
+            text: 'The album has been successfully updated.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    <?php elseif (isset($_POST['delete_album'])): ?>
+        Swal.fire({
+            title: 'Album Deleted!',
+            text: 'The album has been successfully deleted.',
+            icon: 'success',
+            confirmButtonText: 'OK'
+        });
+    <?php endif; ?>
     </script>
 </body>
 </html>

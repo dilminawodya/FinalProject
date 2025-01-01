@@ -8,18 +8,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $description = $_POST['description'];
         $created_by = $_POST['created_by'];
         $sql = "INSERT INTO playlists (name, description, created_by) VALUES ('$name', '$description', '$created_by')";
-        mysqli_query($conn, $sql);
+        if (mysqli_query($conn, $sql)) {
+            echo "<script>
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Playlist added successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'OK',
+                    background: '#d4edda',
+                    showCloseButton: true
+                });
+            </script>";
+        }
     } elseif (isset($_POST['update_playlist'])) {
         $id = $_POST['playlist_id'];
         $name = $_POST['name'];
         $description = $_POST['description'];
         $created_by = $_POST['created_by'];
         $sql = "UPDATE playlists SET name='$name', description='$description', created_by='$created_by' WHERE playlist_id=$id";
-        mysqli_query($conn, $sql);
+        if (mysqli_query($conn, $sql)) {
+            echo "<script>
+                Swal.fire({
+                    title: 'Updated!',
+                    text: 'Playlist updated successfully!',
+                    icon: 'info',
+                    confirmButtonText: 'Great!',
+                    background: '#cce5ff',
+                    showCloseButton: true
+                });
+            </script>";
+        }
     } elseif (isset($_POST['delete_playlist'])) {
         $id = $_POST['playlist_id'];
         $sql = "DELETE FROM playlists WHERE playlist_id=$id";
-        mysqli_query($conn, $sql);
+        if (mysqli_query($conn, $sql)) {
+            echo "<script>
+                Swal.fire({
+                    title: 'Deleted!',
+                    text: 'Playlist deleted successfully!',
+                    icon: 'warning',
+                    confirmButtonText: 'OK',
+                    background: '#f8d7da',
+                    showCloseButton: true
+                });
+            </script>";
+        }
     }
 }
 
@@ -35,11 +68,13 @@ $result = mysqli_query($conn, "SELECT * FROM playlists");
     <link rel="stylesheet" href="admin-playlist.css">
     <!-- Add Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
 </head>
 <body>
 <div class="main">
     <h1>Manage Playlists</h1>
-    <form method="POST">
+    <form id="playlist-form" method="POST">
         <input type="hidden" name="playlist_id" id="playlist_id">
         <label>Name:</label><br>
         <input type="text" name="name" id="name" required><br>
@@ -68,8 +103,8 @@ $result = mysqli_query($conn, "SELECT * FROM playlists");
                 <td><?= $row['description'] ?></td>
                 <td><?= $row['created_by'] ?></td>
                 <td>
-                    <!-- Delete Button with Icon -->
-                    <form method="POST" style="display:inline;">
+                    <!-- Delete Button with SweetAlert -->
+                    <form method="POST" style="display:inline;" onsubmit="return confirmDelete(<?= $row['playlist_id'] ?>)">
                         <input type="hidden" name="playlist_id" value="<?= $row['playlist_id'] ?>">
                         <button type="submit" name="delete_playlist"><i class="fas fa-trash-alt"></i> Delete</button>
                     </form>
@@ -81,12 +116,39 @@ $result = mysqli_query($conn, "SELECT * FROM playlists");
     </table>
 </div>
 
+<!-- SweetAlert2 JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
 <script>
 function editPlaylist(playlist) {
     document.getElementById('playlist_id').value = playlist.playlist_id;
     document.getElementById('name').value = playlist.name;
     document.getElementById('description').value = playlist.description;
     document.getElementById('created_by').value = playlist.created_by;
+    Swal.fire({
+        title: 'Edit Playlist',
+        text: 'You can now edit the playlist details.',
+        icon: 'info',
+        confirmButtonText: 'OK',
+        background: '#e2e3e5'
+    });
+}
+
+function confirmDelete(id) {
+    return Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+        background: '#f8d7da'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.querySelector(`form[onsubmit="return confirmDelete(${id})"]`).submit();
+        }
+        return false;
+    });
 }
 </script>
 </body>

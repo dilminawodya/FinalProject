@@ -13,25 +13,26 @@ include 'db_connect.php';
 </head>
 <body>
  <!-- Navigation Bar -->
- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-        <img src="logoo.png" alt="Funix Logo" class="about-logo" width=70px height=70px>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="search.php">Search</a></li>
-                    <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
-                    <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
-                    <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
-                    <a href="login.php" class="btn btn-secondary m-2">Login</a>
-                    <a href="register.php" class="btn btn-secondary m-2">Register</a>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <img src="logoo.png" alt="Funix Logo" class="about-logo" width="70px" height="70px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="home.php">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="search.php">Search</a></li>
+                <li class="nav-item"><a class="nav-link" href="library.php">Library</a></li>
+                <li class="nav-item"><a class="nav-link" href="browse_albums.php">Albums</a></li>
+                <li class="nav-item"><a class="nav-link" href="package.php">Payment</a></li>
+                <li class="nav-item"><a href="login.php" class="btn btn-secondary m-2">Login</a></li>
+                <li class="nav-item"><a href="register.php" class="btn btn-secondary m-2">Register</a></li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
 
     

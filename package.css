@@ -7,7 +7,6 @@ body {
     padding: 0;
 }
 
-
 /* Navigation Bar */
 .navbar {
     display: flex;
@@ -26,25 +25,24 @@ body {
     color: #e0c3f0; /* Light Purple */
 }
 
-.nav-links {
-    list-style: none;
+.navbar-nav {
     display: flex;
     gap: 20px;
-    text-align: right;
+    margin-left: auto;  /* Ensures the nav items are on the left side */
 }
 
-.nav-links li {
+.navbar-nav li {
     display: inline;
 }
 
-.nav-links a {
+.navbar-nav a {
     color: white;
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s;
 }
 
-.nav-links a:hover {
+.navbar-nav a:hover {
     color: #e0c3f0; /* Light Purple */
 }
 
