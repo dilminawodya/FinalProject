@@ -1,83 +1,84 @@
-/* General Body Styling */
-body {
-    font-family: 'Open Sans', sans-serif;
+ /* General Body Styling */
+ body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #290652;
-    color: #fff; /* Changed to white */
+    background-color: #2a0845; /* Dark purple background */
+    color: #ffffff;
 }
 
 /* Main Container */
 .main {
     max-width: 1200px;
-    margin: 40px auto;
-    padding: 20px;
-    background: #290652;
-    box-shadow: 0 4px 20px rgba(245, 244, 244, 0.1);
-    border-radius: 8px;
-}
-
-.main h1 {
-    text-align: center;
-    color: #f3f2f3;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    padding: 40px;
 }
 
 /* Form Styling */
 form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    background: #1c0231;
+    background-color: #3e125f; /* Slightly lighter purple */
     padding: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
 }
 
 form label {
-    flex: 1 1 100%;
+    display: block;
+    margin-bottom: 8px;
     font-weight: bold;
-    margin-bottom: 5px;
-    color: #c7b1eb; /* Changed to white */
+    color: #e0c3f0; /* Soft pastel color for contrast */
 }
 
-form input,
+form input, 
 form select {
-    flex: 1 1 calc(50% - 20px);
+    width: 100%;
     padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 4px;
     font-size: 1rem;
-    color: #070707; /* Changed to white */
-    background-color:  #f7f5f5; ; /* Added dark background to make input fields visible */
+    background-color: #e0c3f0;
+    color: #3e125f;
 }
 
+/* Button Styling */
 form button {
-    flex: 1 1 100%;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
     font-weight: bold;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    color: #fff; /* Changed to white */
+    transition: all 0.3s ease;
 }
 
 form button[name="add_payment"] {
-    background-color: #6a1b9a;
-    color: #fff;
+    background-color: #6a1b9a; /* Purple button for adding */
+    color: #ffffff;
 }
 
 form button[name="add_payment"]:hover {
-    background-color: #501b72;
+    background-color: #8e24aa; /* Hover effect for add button */
 }
 
 form button[name="update_payment"] {
-    background-color: #b783f3;
-    color: #fff;
+    background-color: #e0c3f0; /* Soft pastel button for updating */
+    color: #3e125f;
 }
 
 form button[name="update_payment"]:hover {
-    background-color: #a752d8;
+    background-color: #d1b3e0; /* Hover effect for update button */
+}
+
+/* Delete Button */
+form button[name="delete_payment"] {
+    background-color: #d32f2f; /* Red for delete */
+    color: #ffffff;
+}
+
+form button[name="delete_payment"]:hover {
+    background-color: #f44336; /* Hover for delete button */
 }
 
 /* Table Styling */
@@ -85,58 +86,53 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    border: 1px solid #181717;
-    font-size: 0.9rem;
-    text-align: left;
-    color: #fff; /* Changed to white */
+    background-color: #3e125f; /* Matches form styling */
+    color: #ffffff;
 }
 
 table th, table td {
+    text-align: left;
     padding: 10px;
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #33213f; /* Subtle border for rows */
 }
 
 table th {
-    background-color: #6a1b9a;
-    color: #fff;
-}
-
-table tr:nth-child(even) {
-    background-color: #1f0435;
+    background-color: #563769;
+    color: #ffffff;
 }
 
 table tr:hover {
-    background-color: #b869e6;
+    background-color: #3b2742;
 }
 
+/* Edit Button */
 table button {
-    padding: 5px 10px;
+    background-color: #8e24aa; /* Purple for Edit */
+    color: #ffffff;
     border: none;
     border-radius: 4px;
-    color: #0f0f0f; /* Changed to white */
-    font-size: 0.8rem;
+    padding: 5px 15px;
     cursor: pointer;
-}
-
-table button.edit {
-    background-color: #6a1b9a;
-}
-
-table button.delete {
-    background-color: #e63946;
+    transition: background-color 0.3s;
 }
 
 table button:hover {
-    opacity: 0.9;
+    background-color: #6a1b9a; /* Hover effect for edit */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    form {
-        flex-direction: column;
-    }
+/* Logout Button */
+.logout-btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 20px;
+    background-color: #e0c3f0;
+    color: #3e125f;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-    form input, form select {
-        flex: 1 1 100%;
-    }
+.logout-btn:hover {
+    background-color: #d1b3e0;
+    color: #2a0845;
 }

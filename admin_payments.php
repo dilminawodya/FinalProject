@@ -58,7 +58,7 @@ $result = mysqli_query($conn, "SELECT * FROM payment ORDER BY payment_date DESC"
 <head>
     <meta charset="UTF-8">
     <title>Manage Payments</title>
-    <link rel="stylesheet" href="admin-payment.css">
+    <link rel="stylesheet" href="adm-payment.css">
     <!-- Add Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- SweetAlert2 CSS -->
