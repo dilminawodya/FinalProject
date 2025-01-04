@@ -64,30 +64,56 @@ header p {
     font-size: 1rem;
     margin-top: 10px;
 }
-
 /* Playlist Section */
+body {
+    background-color: #2a0845; /* Dark background for contrast */
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Card Styling */
 .card {
-    background-color: #a071cc;
+    background: linear-gradient(135deg, #3e2d64, #3f2047); /* Smooth gradient */
     border: none;
-    transition: transform 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.05);
+    transform: translateY(-8px); /* Subtle lift effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Shadow for depth */
 }
 
 .card-title {
-    font-size: 1.2rem;
-    color: #e0c3f0;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #ffffff;
 }
 
 .card-text {
-    color: #d4c4e2; /* Light Grayish Purple */
+    color: #e0d1f3;
+    font-size: 1rem;
+    margin: 10px 0;
 }
 
 .text-muted {
+    color: #d3d0d6;
     font-size: 0.9rem;
 }
+
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+}
+
 
 
 footer {

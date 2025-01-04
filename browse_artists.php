@@ -132,16 +132,16 @@
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Features</h6>
           <p>
-            <a href="#playlists" class="text-reset">Playlists</a>
+          <a href="browse_playlists.php" class="text-reset">Playlists</a>
           </p>
           <p>
-            <a href="#top-charts" class="text-reset">Catalogue</a>
+            <a href="library.php" class="text-reset">Catalogue</a>
           </p>
           <p>
-            <a href="#new-releases" class="text-reset">New Releases</a>
+            <a href="home.php" class="text-reset">New Releases</a>
           </p>
           <p>
-            <a href="#premium" class="text-reset">Packages</a>
+            <a href="packagess.php" class="text-reset">Packages</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -151,16 +151,16 @@
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
           <p>
-            <a href="#about-us" class="text-reset">About Us</a>
+          <a href="about.php" class="text-reset">About Us</a>
           </p>
           <p>
-            <a href="#contact" class="text-reset">Commends</a>
+            <a href="comments_page.php" class="text-reset">Commends</a>
           </p>
           <p>
-            <a href="#faq" class="text-reset">Library</a>
+            <a href="library.php" class="text-reset">Library</a>
           </p>
           <p>
-            <a href="#help" class="text-reset">Album</a>
+            <a href="browse_albums.php" class="text-reset">Album</a>
           </p>
         </div>
         <!-- Grid column -->

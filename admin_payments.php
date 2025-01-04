@@ -2,6 +2,7 @@
 include 'db_connect.php'; // Connect to your database
 
 // Handle Create, Update, and Delete
+$action_message = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['add_payment'])) {
         $amount = $_POST['amount'];
@@ -12,11 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "INSERT INTO payment (amount, payment_date, payment_status, payment_method, transaction_id) 
                 VALUES ('$amount', '$payment_date', '$payment_status', '$payment_method', '$transaction_id')";
         if (mysqli_query($conn, $sql)) {
-            echo "<script>
-                Swal.fire('Success!', 'Payment added successfully!', 'success').then(() => {
-                    window.location.reload();
-                });
-            </script>";
+            $action_message = 'Payment added successfully!';
         }
     } elseif (isset($_POST['update_payment'])) {
         $payment_id = $_POST['payment_id'];
@@ -30,21 +27,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     payment_method='$payment_method', transaction_id='$transaction_id' 
                 WHERE payment_id=$payment_id";
         if (mysqli_query($conn, $sql)) {
-            echo "<script>
-                Swal.fire('Success!', 'Payment updated successfully!', 'success').then(() => {
-                    window.location.reload();
-                });
-            </script>";
+            $action_message = 'Payment updated successfully!';
         }
     } elseif (isset($_POST['delete_payment'])) {
         $payment_id = $_POST['payment_id'];
         $sql = "DELETE FROM payment WHERE payment_id=$payment_id";
         if (mysqli_query($conn, $sql)) {
-            echo "<script>
-                Swal.fire('Deleted!', 'Payment deleted successfully!', 'success').then(() => {
-                    window.location.reload();
-                });
-            </script>";
+            $action_message = 'Payment deleted successfully!';
         }
     }
 }
@@ -57,17 +46,16 @@ $result = mysqli_query($conn, "SELECT * FROM payment ORDER BY payment_date DESC"
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Payments</title>
     <link rel="stylesheet" href="adm-payment.css">
-    <!-- Add Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- SweetAlert2 CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 <div class="main">
     <h1>Manage Payments</h1>
-    <form id="payment-form" method="POST" onsubmit="return handleSubmit(event)">
+    <form method="POST">
         <input type="hidden" name="payment_id" id="payment_id">
         <label>Amount:</label><br>
         <input type="number" step="0.01" name="amount" id="amount" required><br>
@@ -83,10 +71,15 @@ $result = mysqli_query($conn, "SELECT * FROM payment ORDER BY payment_date DESC"
         <input type="text" name="payment_method" id="payment_method" required><br>
         <label>Transaction ID:</label><br>
         <input type="text" name="transaction_id" id="transaction_id"><br>
-        <button type="submit" name="add_payment" id="add-btn"><i class="fas fa-plus"></i> Add Payment</button>
-        <button type="submit" name="update_payment" id="update-btn"><i class="fas fa-edit"></i> Update Payment</button>
+        <button type="submit" name="add_payment" onclick="return confirmAction('add')">
+            <i class="fas fa-plus"></i> Add Payment
+        </button>
+        <button type="submit" name="update_payment" onclick="return confirmAction('update')">
+            <i class="fas fa-edit"></i> Update Payment
+        </button>
     </form>
-    <a href="admin_dashboard.php" class="logout-btn"><i class="fas fa-home"></i> Dashboard</a>
+    <a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
+
     <h2>Payment List</h2>
     <table>
         <tr>
@@ -107,19 +100,32 @@ $result = mysqli_query($conn, "SELECT * FROM payment ORDER BY payment_date DESC"
                 <td><?= htmlspecialchars($row['payment_method']) ?></td>
                 <td><?= htmlspecialchars($row['transaction_id']) ?></td>
                 <td>
-                    <form method="POST" style="display:inline;" onsubmit="return confirmDelete(<?= $row['payment_id'] ?>)">
+                    <form method="POST" style="display:inline;">
                         <input type="hidden" name="payment_id" value="<?= $row['payment_id'] ?>">
-                        <button type="submit" name="delete_payment"><i class="fas fa-trash-alt"></i> Delete</button>
+                        <button type="submit" name="delete_payment" onclick="return confirmAction('delete')" class="btn-icon">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
                     </form>
-                    <button onclick="editPayment(<?= htmlspecialchars(json_encode($row)) ?>)"><i class="fas fa-edit"></i> Edit</button>
+                    <button onclick="editPayment(<?= htmlspecialchars(json_encode($row)) ?>)" class="btn-icon">
+                        <i class="fas fa-pen"></i> Edit
+                    </button>
                 </td>
             </tr>
         <?php endwhile; ?>
     </table>
 </div>
 
-<!-- SweetAlert2 JavaScript -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+<?php if (!empty($action_message)): ?>
+<script>
+Swal.fire({
+    icon: 'success',
+    title: 'Success!',
+    text: '<?= $action_message ?>',
+    confirmButtonText: 'OK'
+});
+</script>
+<?php endif; ?>
+
 <script>
 function editPayment(payment) {
     document.getElementById('payment_id').value = payment.payment_id;
@@ -128,56 +134,30 @@ function editPayment(payment) {
     document.getElementById('payment_status').value = payment.payment_status;
     document.getElementById('payment_method').value = payment.payment_method;
     document.getElementById('transaction_id').value = payment.transaction_id;
-    Swal.fire('Edit Payment', 'You can now edit the payment details.', 'info');
-}
 
-function confirmDelete(id) {
-    return Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            document.querySelector(`form[onsubmit="return confirmDelete(${id})"]`).submit();
-        }
-        return false;
+    Swal.fire({
+        icon: 'info',
+        title: 'Edit Payment',
+        text: 'You can now edit the payment details in the form.',
+        confirmButtonText: 'OK'
     });
 }
 
-function handleSubmit(event) {
-    event.preventDefault();
-    const form = event.target;
-    const action = form.querySelector("button[type='submit']:focus").name;
+function confirmAction(action) {
+    const actionMessages = {
+        add: 'Are you sure you want to add this payment?',
+        update: 'Are you sure you want to update this payment?',
+        delete: 'Are you sure you want to delete this payment?'
+    };
 
-    if (action === 'add_payment') {
-        Swal.fire({
-            title: 'Confirm Add',
-            text: 'Are you sure you want to add this payment?',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, Add',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                form.submit();
-            }
-        });
-    } else if (action === 'update_payment') {
-        Swal.fire({
-            title: 'Confirm Update',
-            text: 'Are you sure you want to update this payment?',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonText: 'Yes, Update',
-        }).then((result) => {
-            if (result.isConfirmed) {
-                form.submit();
-            }
-        });
-    }
+    return Swal.fire({
+        title: 'Confirm Action',
+        text: actionMessages[action],
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Yes, proceed!',
+        cancelButtonText: 'Cancel'
+    }).then((result) => result.isConfirmed);
 }
 </script>
 </body>

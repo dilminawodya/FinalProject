@@ -49,27 +49,34 @@
     </header>
 
     <!-- Playlist Section -->
-    <main class="container my-4">
-        <div class="row">
-            <?php
-            include 'db_connect.php';
-            $result = mysqli_query($conn, "SELECT * FROM playlists");
-            while ($playlist = mysqli_fetch_assoc($result)) {
-                echo "<div class='col-md-4 mb-4'>";
-                echo "<div class='card bg-dark text-white'>";
-                echo "<div class='card-body'>";
-                echo "<h5 class='card-title'>" . htmlspecialchars($playlist['name']) . "</h5>";
-                echo "<p class='card-text'>" . htmlspecialchars($playlist['description']) . "</p>";
-                echo "<p class='text-muted'>Created By: " . htmlspecialchars($playlist['created_by']) . "</p>";
-                echo "</div>";
-                echo "</div>";
-                echo "</div>";
-            }
+<main class="container my-5">
+    <h2 class="text-center text-white mb-4">Playlists</h2>
+    <div class="row">
+        <?php
+        include 'db_connect.php';
+        $result = mysqli_query($conn, "SELECT * FROM playlists");
+        while ($playlist = mysqli_fetch_assoc($result)) {
+            echo "<div class='col-md-4 col-sm-6 mb-4'>";
+            echo "<div class='card shadow-lg'>";
+            echo "<div class='card-body'>";
+            echo "<h5 class='card-title text-truncate'>" . htmlspecialchars($playlist['name']) . "</h5>";
+            echo "<p class='card-text'>" . htmlspecialchars($playlist['description']) . "</p>";
+            echo "<p class='text-muted'>Created By: <strong>" . htmlspecialchars($playlist['created_by']) . "</strong></p>";
+            
+            echo "</div>";
+            echo "</div>";
+            echo "</div>";
+        }
+      
             
             ?>
-             <a href="view palylist.php" class="btn btn-secondary">View Plylists</a>
+              <a href="view palylist.php" class="btn btn-secondary">View Plylists</a>
+             
         </div>
+        
     </main>
+
+    
 
     
 
@@ -125,16 +132,16 @@
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Features</h6>
           <p>
-            <a href="#playlists" class="text-reset">Playlists</a>
+          <a href="browse_playlists.php" class="text-reset">Playlists</a>
           </p>
           <p>
-            <a href="#top-charts" class="text-reset">Catalogue</a>
+            <a href="library.php" class="text-reset">Catalogue</a>
           </p>
           <p>
-            <a href="#new-releases" class="text-reset">New Releases</a>
+            <a href="home.php" class="text-reset">New Releases</a>
           </p>
           <p>
-            <a href="#premium" class="text-reset">Packages</a>
+            <a href="packagess.php" class="text-reset">Packages</a>
           </p>
         </div>
         <!-- Grid column -->
@@ -144,16 +151,16 @@
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">Quick Links</h6>
           <p>
-            <a href="#about-us" class="text-reset">About Us</a>
+          <a href="about.php" class="text-reset">About Us</a>
           </p>
           <p>
-            <a href="#contact" class="text-reset">Commends</a>
+            <a href="comments_page.php" class="text-reset">Commends</a>
           </p>
           <p>
-            <a href="#faq" class="text-reset">Library</a>
+            <a href="library.php" class="text-reset">Library</a>
           </p>
           <p>
-            <a href="#help" class="text-reset">Album</a>
+            <a href="browse_albums.php" class="text-reset">Album</a>
           </p>
         </div>
         <!-- Grid column -->
