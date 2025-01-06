@@ -73,7 +73,7 @@ body {
 
 /* Card Styling */
 .card {
-    background: linear-gradient(135deg, #3e2d64, #3f2047); /* Smooth gradient */
+    background: linear-gradient(135deg, #6d6386, #3f2047); /* Smooth gradient */
     border: none;
     border-radius: 12px;
     overflow: hidden;

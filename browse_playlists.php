@@ -50,7 +50,7 @@
 
     <!-- Playlist Section -->
 <main class="container my-5">
-    <h2 class="text-center text-white mb-4">Playlists</h2>
+  
     <div class="row">
         <?php
         include 'db_connect.php';

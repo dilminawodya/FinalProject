@@ -52,7 +52,7 @@ $result = mysqli_query($conn, "SELECT * FROM artists");
         <button type="submit" name="add_artist"><i class="fas fa-plus"></i> Add Artist</button>
         <button type="submit" name="update_artist"><i class="fas fa-pencil-alt"></i> Update Artist</button>
     </form>
-    <a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
+    <a href="admin_dashboard.php" class="logout-btn"><i class="fas fa-home"></i> Dashboard</a>
     <h2>Artist List</h2>
     <table>
         <tr>

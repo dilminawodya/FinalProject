@@ -46,7 +46,7 @@ $result = mysqli_query($conn, "
 </head>
 <body>
     <div class="main">
-        <h1><i class="fas fa-music"></i> Manage Albums</h1>
+        <h1> Manage Albums</h1>
         <form method="POST">
             <input type="hidden" name="album_id" id="album_id">
             <label>Title:</label><br>
@@ -69,7 +69,7 @@ $result = mysqli_query($conn, "
             <button type="submit" name="update_album"><i class="fas fa-edit"></i> Update Album</button>
         </form>
 
-        <a href="admin_dashboard.php" class="logout-btn"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a href="admin_dashboard.php" class="logout-btn"><i class="fas fa-home"></i> Dashboard</a>
         <h2><i class="fas fa-list"></i> Album List</h2>
         <table>
             <tr>

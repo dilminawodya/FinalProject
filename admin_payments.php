@@ -78,7 +78,7 @@ $result = mysqli_query($conn, "SELECT * FROM payment ORDER BY payment_date DESC"
             <i class="fas fa-edit"></i> Update Payment
         </button>
     </form>
-    <a href="admin_dashboard.php" class="logout-btn">Dashboard</a>
+    <a href="admin_dashboard.php" class="logout-btn"><i class="fas fa-home"></i> Dashboard</a>
 
     <h2>Payment List</h2>
     <table>

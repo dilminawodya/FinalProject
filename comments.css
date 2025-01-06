@@ -2,7 +2,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: url('back.jpg') no-repeat center center fixed; /* Replace 'your-background-image.jpg' with the actual path */
+    background: url('hollywood.jpg') no-repeat center center fixed; /* Replace 'your-background-image.jpg' with the actual path */
     background-size: cover; /* Ensures the image covers the entire background */
     color: #e0e0e0;
     line-height: 1.6;
@@ -24,7 +24,7 @@ body {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background: linear-gradient(145deg, #b5b5e6, #522b5a); /* Modern gradient */
+    background: linear-gradient(145deg, #5c5c8f, #522b5a); /* Modern gradient */
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -95,7 +95,7 @@ form {
     max-width: 800px;
     margin: 2rem auto;
     padding: 2rem;
-    background: linear-gradient(145deg, #babadd, #4f2b5a); /* Matching gradient */
+    background: linear-gradient(145deg, #5c5c8f, #4f2b5a); /* Matching gradient */
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
 }
